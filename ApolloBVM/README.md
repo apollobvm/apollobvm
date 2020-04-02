@@ -6,7 +6,6 @@
 # Installation Instructions #
   * In the Arduino IDE, go to Tools->Manage Libraries...
   * Search for and install any listed dependencies.
-  * Create a .zip file of this directory.
   * In the Arduino IDE, go to Sketch->Include Library->Add .ZIP Library...
-  * Navigate to and click the .zip file of this directory.
+  * Navigate to and click on the directory for this library.
 
