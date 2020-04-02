@@ -1,0 +1,7 @@
+# Ignore any zip files
+*.zip
+
+# Ignore VIM temp files
+*.swp
+*.swo
+
