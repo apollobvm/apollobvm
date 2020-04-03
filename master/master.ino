@@ -9,7 +9,7 @@ ButtonManager encoder_button(7, true);
 ButtonManager stop_button(11, false);
 
 // Default settings
-VentSettings vs = {'X', 500, 12, 1, 3, 0, 0, 20, 0, 0, 0, false}; 
+VentSettings vs = {'X', 500, 12, 1, 3, 0, 30, 20, 0, 0, 0, false}; 
 
 // String params
 String* splash_text = new String[4];
@@ -100,7 +100,7 @@ void transmit() {
   // Send settings to controller unit, if we're loading.
   if (vs.mode == 'L') {
       // TODO Build lookup table based on real information.
-      int setpoint = map(vs.tidal_volume, 300, 650, 500, 1900);
+      int setpoint = map(vs.tidal_volume, 300, 650, 800, 1850);
       Wire.write(byte(setpoint >> 8));
       Wire.write(byte(setpoint & 0x00FF));
       Wire.write(byte(vs.respiration_rate));

@@ -326,10 +326,14 @@ void PausePanel::start() {
 
   // Start a new encoder manager.
   _em_ptr->start();
+  _em_ptr->setSelection(0);
 
   // Change mode to stop operation.
   _vs_ptr->mode = 'X';
   _vs_ptr->send = true;
+
+  // Reset the selection.
+  _selection = 0;
 
   // Clear display.
   _disp_ptr->clearDisplay();

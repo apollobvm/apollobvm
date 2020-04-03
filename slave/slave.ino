@@ -3,8 +3,8 @@
 #include <trajfactory.h>
 
 #define SLAVE_ADDR 8
-#define SERVO_MIN 2490
-#define SERVO_MAX 500
+#define SERVO_MIN 2400
+#define SERVO_MAX 550
 
 TrajFactory tf = TrajFactory();
 Trajectory* traj_ptr = 0;
@@ -65,7 +65,7 @@ void loop() {
 }
 
 void moveTo(int pos, int delta_t){
-  /*Serial.println(pos);*/
+  Serial.println(SERVO_MIN-pos);
   servo.writeMicroseconds(SERVO_MIN-pos);
   delay(delta_t);
 }
@@ -79,7 +79,7 @@ void stop(){
     }
   // If not, got to 0 position.
   } else {
-    moveTo(SERVO_MAX, 100);
+    moveTo(0, 100);
   }
 }
 
@@ -98,28 +98,22 @@ void recieveTraj(int num_entries) {
     case 'L':
       state = 'L';
 
-      Serial.println("Loading...");
       // Load new params
       byte high = Wire.read();
       byte low = Wire.read();
       setpoint = (high << 8) | low;
-      Serial.println(setpoint);
 
       rr = Wire.read();
-      Serial.println(rr);
 
       byte inhale = Wire.read();
       byte exhale = Wire.read();
       ie = float(inhale) / exhale;
-      Serial.println(ie);
 
       byte hold_s = Wire.read();
       byte hold_dec = Wire.read();
       hold = hold_s + hold_dec/100.0;
-      Serial.println(hold);
 
       delta_t = Wire.read();
-      Serial.println(delta_t);
 
 
       break;
