@@ -82,7 +82,7 @@ class EditPanel : public Panel {
     int _delta_exhale = 1;
 
     int _min_tidal_volume = 300;
-    int _max_tidal_volume = 650;
+    int _max_tidal_volume = 700;
     int _delta_tidal_volume = 50;
 
     int _row = 0;
