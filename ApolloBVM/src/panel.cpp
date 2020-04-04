@@ -94,6 +94,7 @@ Panel* EditPanel::update() {
 
   // Check if we have a non-zero stop panel pointer and return if button pushed.
   if (_stop_panel_ptr != 0 && _stop_button_ptr->getButtonState()) {
+    _em_ptr->close();
     return _stop_panel_ptr; 
   }
 
@@ -110,6 +111,7 @@ Panel* EditPanel::update() {
         _vs_ptr->seconds = 0;
       }
 
+      _em_ptr->close();
       return _run_panel_ptr;
     }
 
@@ -370,9 +372,11 @@ Panel* PausePanel::update() {
   // If encoder button pushed over run, exit and start running.
   if (_selection == 0 && _em_button_ptr->getButtonState()) {
     _disp_ptr->blinkingOff();
+    _em_ptr->close();
     return _run_panel_ptr;
   } else if (_selection == 1 && _em_button_ptr->getButtonState()) {
     _disp_ptr->blinkingOff();
+    _em_ptr->close();
     return _apply_panel_ptr;
   }
 
