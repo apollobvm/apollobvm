@@ -1,8 +1,7 @@
 #include "panel.h"
 
 
-Panel::Panel(NhdDisplay* disp_ptr, Encoder* encoder_ptr, ButtonManager* em_button_ptr, ButtonManager* stop_button_ptr, VentSettings* vs_ptr) :
-  _disp_ptr(disp_ptr),
+Panel::Panel(NhdDisplay* disp_ptr, Encoder* encoder_ptr, ButtonManager* em_button_ptr, ButtonManager* stop_button_ptr, VentSettings* vs_ptr) : _disp_ptr(disp_ptr),
   _encoder_ptr(encoder_ptr),
   _em_button_ptr(em_button_ptr),
   _stop_button_ptr(stop_button_ptr),
@@ -290,6 +289,32 @@ Panel* RunningPanel::update() {
   {
     // Increase time.
     _vs_ptr->seconds++;  // increase seconds
+
+
+    // Respiration Rate testing
+    //float breath_time = 5 * (60.0/_vs_ptr->respiration_rate);
+    //if (_vs_ptr->seconds % int(breath_time - 1) == 0) {
+      //if (_vs_ptr->respiration_rate != 24) {
+        //_vs_ptr->mode = 'L';
+        //_vs_ptr->send = true;
+        //_vs_ptr->respiration_rate += 1;
+      //Serial.println(_vs_ptr->respiration_rate);
+      //_vs_ptr->seconds = 0;
+      //_disp_ptr->setCursor(1, 2);
+      //_disp_ptr->print(_rr_text + _disp_ptr->zeroPad(_vs_ptr->respiration_rate) + _rr_units);
+      //} else {
+        //_vs_ptr->mode = 'X';
+        //_vs_ptr->respiration_rate = 12;
+        //_vs_ptr->send = true;
+        //return _stop_panel_ptr; 
+      //}
+    //}
+
+    //if (_vs_ptr->seconds % int(breath_time) == 0) {
+      //if (_vs_ptr->respiration_rate != 24) {
+      //} 
+    //}
+
     if (_vs_ptr->seconds == 60)  // If it's been a minute
     {
       _vs_ptr->seconds = 0;  // start over seconds
