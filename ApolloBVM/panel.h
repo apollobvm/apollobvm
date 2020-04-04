@@ -73,11 +73,11 @@ class EditPanel : public Panel {
     Panel* _run_panel_ptr;
     Panel* _stop_panel_ptr;
 
-    int _min_respiration_rate = 5;
+    int _min_respiration_rate = 10;
     int _max_respiration_rate = 30;
     int _delta_respiration_rate = 1;
 
-    int _min_exhale = 2;
+    int _min_exhale = 1;
     int _max_exhale = 5;
     int _delta_exhale = 1;
 

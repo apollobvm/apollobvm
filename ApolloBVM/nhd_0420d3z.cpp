@@ -37,6 +37,8 @@ void NhdDisplay::clearDisplay() {
 
 void NhdDisplay::setCursor(byte cursor_position, byte line) {
   byte to_write = cursor_position;
+
+  // Change the write value based on the line.
   switch (line) {
     case 1:
       to_write += 0x40;
