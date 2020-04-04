@@ -1,25 +1,20 @@
-# This is the name of the workflow, visible on GitHub UI.
-name: CI
+name: test
 
-# Here we tell GitHub to run the workflow when a commit
-# is pushed or a Pull Request is opened.
 on: [push, pull_request]
 
-# This is the list of jobs that will be run concurrently.
-# Since we use a build matrix, the actual number of jobs
-# started depends on how many configurations the matrix
-# will produce.
 jobs:
-  # This is the name of the job - can be whatever.
+  # Name this job.
   test-matrix:
 
     # Here we tell GitHub that the jobs must be determined
     # dynamically depending on a matrix configuration.
     strategy:
       matrix:
-        # We only currently support AVR boards.
+        # The matrix will produce one job for each configuration
+        # parameter of type `arduino-platform`, in this case a
+        # total of 2.
         #arduino-platform: ["arduino:samd", "arduino:avr"]
-        arduino-platform: ["arduino:avr"]
+        arduino-platform: [ "arduino:avr"]
         # This is usually optional but we need to statically define the
         # FQBN of the boards we want to test for each platform. In the
         # future the CLI might automatically detect and download the core
@@ -28,14 +23,14 @@ jobs:
         include:
           # This works like this: when the platformn is "arduino:samd", the
           # variable `fqbn` is set to "arduino:samd:nano_33_iot".
-          - arduino-platform: "arduino:samd"
-            fqbn: "arduino:samd:nano_33_iot"
+          #- arduino-platform: "arduino:samd"
+            #fqbn: "arduino:samd:nano_33_iot"
           - arduino-platform: "arduino:avr"
             fqbn: "arduino:avr:unowifi"
 
     # This is the platform GitHub will use to run our workflow, we
     # pick Windows for no particular reason.
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     # This is the list of steps this job will run.
     steps:
@@ -54,10 +49,19 @@ jobs:
         run: |
           arduino-cli core update-index
           arduino-cli core install ${{ matrix.arduino-platform }}
-          arduino-cli lib install ApolloBVM
+
+      # Install ApolloBVM lib and deps.
+      - name: Install libraries
+        run: |
+          arduino-cli lib install Encoder
+          arduino-cli lib install Servo
+          arduino-cli lib install Wire
+          cp ApolloBVM/ /home/runner/Arduino/libraries/ -r
+          arduino-cli lib list
 
       # Finally, we compile the sketch, using the FQBN that was set
       # in the build matrix.
       - name: Compile Sketch
-        run: arduino-cli compile --fqbn ${{ matrix.fqbn }} ./master
-        run: arduino-cli compile --fqbn ${{ matrix.fqbn }} ./slave
+        run: |
+          arduino-cli compile --fqbn ${{ matrix.fqbn }} ./master
+          arduino-cli compile --fqbn ${{ matrix.fqbn }} ./slave
