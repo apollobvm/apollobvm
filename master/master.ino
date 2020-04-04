@@ -8,6 +8,9 @@ Encoder enc(5,6);
 ButtonManager encoder_button(7, true);
 ButtonManager stop_button(11, false);
 
+// Calibration for TV
+int cal[9] = {950, 1062, 1155, 1238, 1320, 1393, 1465, 1538, 1610};
+
 // Default settings
 VentSettings vs = {'X', 500, 12, 1, 3, 0, 00, 20, 0, 0, 0, false}; 
 
@@ -100,7 +103,10 @@ void transmit() {
   // Send settings to controller unit, if we're loading.
   if (vs.mode == 'L') {
       // TODO Build lookup table based on real information.
-      int setpoint = map(vs.tidal_volume, 300, 650, 887, 1610);
+      /*int setpoint = map(vs.tidal_volume, 300, 650, 887, 1610);*/
+      /*int setpoint = 1538;*/
+      /*int setpoint = tv_setpoint.valueAt(vs.tidal_volume);*/
+      int setpoint = cal[(vs.tidal_volume - 300)/50];
       Wire.write(byte(setpoint >> 8));
       Wire.write(byte(setpoint & 0x00FF));
       Wire.write(byte(vs.respiration_rate));
