@@ -2,7 +2,7 @@
 ### Rice University Oshman Engineering Design Kitchen ###
 ###### Author: Thomas Herring ######
 
-![Build Status](https://github.com/apollobvm/apollobvm/workflows/test/badge.svg)
+![Build Status](https://github.com/apollobvm/apollobvm/workflows/build/badge.svg)
 <!--[![Build Status](https://github.com/apollobvm/apollobvm/workflows/test/badge.svg)](https://github.com/arduino/arduino-cli-example/actions)-->
 
 This repository contains all the working code for both the master and slave Arduino to build the ApolloBVM. Feel free to fork it for your own development, we encourage collaboration! All mechanical parts and assembly instructions can be found [here](http://oedk.rice.edu/apollobvm).
