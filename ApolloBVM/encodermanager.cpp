@@ -35,7 +35,7 @@ void EncoderManager::poll() {
       }
     }
 
-  }// Variables will change:
+  }
 }
 
 int EncoderManager::getSelection() {
@@ -45,6 +45,7 @@ int EncoderManager::getSelection() {
 void EncoderManager::setSelection(int selection) {
   _selection = selection;
   _encoder_ptr->write(COUNTS_PER_STEP * _selection);
+  delete _pos_ptr;
   _pos_ptr = new long(COUNTS_PER_STEP * _selection);
 }
 
@@ -53,5 +54,5 @@ void EncoderManager::setNumOptions(int num_options) {
 }
 
 void EncoderManager::close() {
-  delete _encoder_ptr;
+  delete _pos_ptr;
 }
