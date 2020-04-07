@@ -56,15 +56,15 @@ void setup()
 
   // Init slash text.
   splash_text[0] = "";
-  splash_text[1] = "       Apollo";
-  splash_text[2] = "        BVM";
+  splash_text[1] = "     ApolloBVM";
+  splash_text[2] = "";
   splash_text[3] = "";
 
   //Init warning text.
   warning_text[0] = "      WARNING: ";
-  warning_text[1] = "      USE ADULT ";
-  warning_text[2] = "        SIZED";
-  warning_text[3] = "         BVM ";
+  warning_text[1] = "   USE ADULT SIZED";
+  warning_text[2] = "   BAG VALVE MASK";
+  warning_text[3] = "";
 
   // Init panels.
   start_ptr = new EditPanel(&display, &enc, &encoder_button, &stop_button, &vs, &vl, "Confirm & Run?", &run_ptr, 0);
