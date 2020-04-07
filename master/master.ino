@@ -115,7 +115,7 @@ void transmit() {
   // Send settings to controller unit, if we're loading.
   if (vs.mode == 'L') {
     // Calculate setpoint based on calibration.
-    int setpoint = cal[(vs.tidal_volume - 300)/50];
+    int setpoint = cal[(vs.tidal_volume - vl.min_tidal_volume)/vl.delta_tidal_volume];
 
     // Send the ventilation parameters to slave.
     Wire.write(byte(setpoint >> 8));
