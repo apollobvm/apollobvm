@@ -17,7 +17,7 @@ class Panel {
 
   protected:
 
-    // Pointers for settings and input.
+    // Pointers for system.
     NhdDisplay* _disp_ptr;
     Encoder* _encoder_ptr;
     ButtonManager* _em_button_ptr;
@@ -35,6 +35,7 @@ class SplashPanel : public Panel {
     Panel* update();
 
   private:
+    
     // Used for basic prompts, displays the panel for this number of ms.
     int _display_time;
     String* _text;
@@ -136,7 +137,6 @@ class PausePanel : public Panel {
     Panel** _run_panel_d_ptr;
     Panel* _apply_panel_ptr;
     Panel* _run_panel_ptr;
-    // Looks like " T00:11:22 Run/Edit?"
 
     String _top_before_time = "T";
     String _top_after_time = " Run/Edit?";

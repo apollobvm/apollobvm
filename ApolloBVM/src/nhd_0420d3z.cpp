@@ -9,6 +9,7 @@ NhdDisplay::NhdDisplay(byte pin):
 }
 
 void NhdDisplay::begin(int baud) {
+  // Start Serial connection with default baud.
   _serial_ptr->begin(9600);
 }
 
@@ -25,20 +26,29 @@ void NhdDisplay::println(String st) {
 }
 
 void NhdDisplay::setBacklight(byte brightness) {
-  _serial_ptr->write(0xFE);  // send the special command
-  _serial_ptr->write(0x53);  // send the backlight command
-  _serial_ptr->write(brightness);  // send the brightness value
+
+  // Send special command byte.
+  _serial_ptr->write(0xFE);
+  // Send command for setting brightness.
+  _serial_ptr->write(0x53);
+  // Send brightness byte.
+  _serial_ptr->write(brightness);
 }
 
 void NhdDisplay::clearDisplay() {
-  _serial_ptr->write(0xFE);  // send the special command
-  _serial_ptr->write(0x51);  // send the clear screen command
+
+  // Send special command byte.
+  _serial_ptr->write(0xFE);
+  // Send command to clear the screen.
+  _serial_ptr->write(0x51);
 }
 
 void NhdDisplay::setCursor(byte cursor_position, byte line) {
+
   byte to_write = cursor_position;
 
   // Change the write value based on the line.
+  // This is needed as the display write line 1 to 3 to 2 to 4.
   switch (line) {
     case 1:
       to_write += 0x40;
@@ -50,53 +60,86 @@ void NhdDisplay::setCursor(byte cursor_position, byte line) {
       to_write += 0x54;
       break;
   }
-  _serial_ptr->write(0xFE);  // send the special command
-  _serial_ptr->write(0x45);  // send the set cursor command
-  _serial_ptr->write(to_write);  // send the cursor position
+  
+  // Send special command byte.
+  _serial_ptr->write(0xFE);
+  // Send command to move the cursor.
+  _serial_ptr->write(0x45);
+  // Send byte for cursor position.
+  _serial_ptr->write(to_write);
 }
 
 void NhdDisplay::underlineOn() {
-  _serial_ptr->write(0xFE);  // send the special command
-  _serial_ptr->write(0x47);  // send the clear screen command
+  
+  // Send special command byte.
+  _serial_ptr->write(0xFE);
+  // Send command to turn underline on.
+  _serial_ptr->write(0x47);
 }
 
 void NhdDisplay::underlineOff() {
-  _serial_ptr->write(0xFE);  // send the special command
-  _serial_ptr->write(0x48);  // send the clear screen command
+
+  // Send special command byte.
+  _serial_ptr->write(0xFE);
+  // Send command to turn underline off.
+  _serial_ptr->write(0x48);
 }
 
 void NhdDisplay::blinkingOn() {
-  _serial_ptr->write(0xFE);  // send the special command
-  _serial_ptr->write(0x4B);  // send the clear screen command
+
+  // Send special command byte.
+  _serial_ptr->write(0xFE);
+  // Send command to turn blinking on.
+  _serial_ptr->write(0x4B);
 }
 
 void NhdDisplay::blinkingOff() {
-  _serial_ptr->write(0xFE);  // send the special command
-  _serial_ptr->write(0x4C);  // send the clear screen command
+
+  // Send special command byte.
+  _serial_ptr->write(0xFE);
+  // Send command to turn blinking off.
+  _serial_ptr->write(0x4C);
 }
 
 void NhdDisplay::moveCursorRight() {
-  _serial_ptr->write(0xFE);  // send the special command
-  _serial_ptr->write(0x4A);  // send the clear screen command
+
+  // Send special command byte.
+  _serial_ptr->write(0xFE);
+  // Send command to move the cursor right by one.
+  _serial_ptr->write(0x4A);
 }
 
 void NhdDisplay::moveCursorLeft() {
-  _serial_ptr->write(0xFE);  // send the special command
-  _serial_ptr->write(0x49);  // send the clear screen command
+
+  // Send special command byte.
+  _serial_ptr->write(0xFE);
+  // Send command to move the cursor left by one.
+  _serial_ptr->write(0x49);
 }
 
 void NhdDisplay::backspace() {
-  _serial_ptr->write(0xFE);  // send the special command
-  _serial_ptr->write(0x4E);  // send the clear screen command
+
+  // Send special command byte.
+  _serial_ptr->write(0xFE);
+  // Send command to move cursor left and remove.
+  _serial_ptr->write(0x4E);
 }
 
 void NhdDisplay::remove() {
+ 
+  // Together these delete the current character.
   moveCursorRight();
   backspace();
 }
 
 String NhdDisplay::zeroPad(int in) {
+  // This helper function ensures integers have 2 decimal places.
+  
+  // Make a temp char array to hold the 2 digits.
   char digit[2];
+
+  // Pad with a 0 if integer is 1 digit.
   sprintf(digit, "%02d", in);
+
   return String(digit);
 }

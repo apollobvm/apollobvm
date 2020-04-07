@@ -1,7 +1,6 @@
 #include "buttonmanager.h"
 
 
-
 ButtonManager::ButtonManager(int pin, bool high_default):
   _last_state(false),
   _debounce_delay(100),
@@ -11,11 +10,13 @@ ButtonManager::ButtonManager(int pin, bool high_default):
 
 void ButtonManager::poll() {
 
+  // Set the reading false by default
   bool reading = false;
 
   // Set the trigger variable to false by default.
   _trigger = false;
 
+  // Set different logic for different default button states.
   if (_high_default) {
     if (digitalRead(_button_pin) == LOW){
       reading = true;
@@ -26,39 +27,33 @@ void ButtonManager::poll() {
     }
   }
 
-
-  // check to see if you just pressed the button
-  // (i.e. the input went from LOW to HIGH), and you've waited long enough
-  // since the last press to ignore any noise:
-
-  // If the switch changed, due to noise or pressing:
+  // If the switch changed, due to noise or pressing.
   if (reading != _last_state) {
-    // reset the debouncing timer
+    // Reset the debouncing timer.
     _last_debounce = millis();
   }
 
+  // If the reading has been there longer than the debounce, we accept its state.
   if ((millis() - _last_debounce) > _debounce_delay) {
-    // whatever the reading is at, it's been there for longer than the debounce
-    // delay, so take it as the actual current state:
 
-    // if the button state has changed:
+    // If the button state has changed.
     if (reading != _button_state) {
       _button_state = reading;
 
+      // We allow the button to only be triggered once per press.
       if (_button_state) {
         _trigger = true;
       }
     }
-
   }
 
-  // save the reading. Next time through the loop, it'll be the lastButtonState:
+  // Save the previous reading for the next poll.
   _last_state = reading;
 
 }
 
 bool ButtonManager::getButtonState(){
-  //return _button_state;
+  // Return the toggle state.
   return _trigger;
 }
 

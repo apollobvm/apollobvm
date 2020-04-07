@@ -12,6 +12,7 @@ class ButtonManager {
     bool getButtonState();
 
   private:
+
     // Button pin for this manager
     int _button_pin;
     // Sets whether the button is normally high or not.
@@ -23,6 +24,7 @@ class ButtonManager {
     // Trigger variable to output only one true per press.
     bool _trigger;
 
+    // Variables to run button debouncing.
     unsigned long _last_debounce;
     unsigned long _debounce_delay;
 };
