@@ -20,6 +20,9 @@ ButtonManager stop_button(STOP_BUTTON_PIN, false);
 // Default settings.
 VentSettings vs = {'X', 500, 12, 1, 3, 0, 00, 20, 0, 0, 0, false}; 
 
+// Default limits.
+VentLimits vl;
+
 // Calibration for TV on Ambu bag SPUR II.
 int cal[9] = {950, 1062, 1155, 1238, 1320, 1393, 1465, 1538, 1610};
 
@@ -64,10 +67,10 @@ void setup()
   warning_text[3] = "         BVM ";
 
   // Init panels.
-  start_ptr = new EditPanel(&display, &enc, &encoder_button, &stop_button, &vs, "Confirm & Run?", &run_ptr, 0);
+  start_ptr = new EditPanel(&display, &enc, &encoder_button, &stop_button, &vs, &vl, "Confirm & Run?", &run_ptr, 0);
   warning_ptr = new SplashPanel(&display, &enc, &encoder_button, &stop_button, &vs, warning_text, 2000, &start_ptr);
   splash_ptr = new SplashPanel(&display, &enc, &encoder_button, &stop_button, &vs, splash_text, 2000, &warning_ptr);
-  apply_ptr = new EditPanel(&display, &enc, &encoder_button, &stop_button, &vs, "Apply Changes?", &run_ptr, &pause_ptr);
+  apply_ptr = new EditPanel(&display, &enc, &encoder_button, &stop_button, &vs, &vl, "Apply Changes?", &run_ptr, &pause_ptr);
   run_ptr = new RunningPanel(&display, &enc, &encoder_button, &stop_button, &vs, &apply_ptr, &pause_ptr);
   pause_ptr = new PausePanel(&display, &enc, &encoder_button, &stop_button, &vs, &start_ptr, &run_ptr);
 
