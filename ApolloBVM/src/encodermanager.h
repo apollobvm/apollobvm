@@ -37,7 +37,5 @@ class EncoderManager {
     // Internal
     int _selection;
     int _num_options;
-
 };
-
 #endif

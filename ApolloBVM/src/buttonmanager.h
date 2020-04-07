@@ -28,5 +28,4 @@ class ButtonManager {
     unsigned long _last_debounce;
     unsigned long _debounce_delay;
 };
-
 #endif

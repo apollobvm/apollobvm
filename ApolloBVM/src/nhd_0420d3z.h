@@ -1,6 +1,5 @@
 #ifndef nhd_0420d3z_h
-#define nhd_0420d3z_h
-
+#define nhd_0420d3z_h 
 #include "Arduino.h"
 #include "SoftwareSerial.h"
 
@@ -51,10 +50,5 @@ class NhdDisplay {
     // Current row and column of the cursor.
     byte _row;
     byte _col;
-
-
-
 };
-
-
 #endif
