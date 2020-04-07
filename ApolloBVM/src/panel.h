@@ -56,7 +56,7 @@ class SplashPanel : public Panel {
 
 class EditPanel : public Panel {
   public:
-    EditPanel(NhdDisplay* disp_ptr, Encoder* encoder_ptr, ButtonManager* em_button_ptr, ButtonManager* stop_button_ptr, VentSettings* vs_ptr, String top_text, Panel** run_panel_ptr, Panel** stop_panel_ptr);
+    EditPanel(NhdDisplay* disp_ptr, Encoder* encoder_ptr, ButtonManager* em_button_ptr, ButtonManager* stop_button_ptr, VentSettings* vs_ptr, VentLimits* vl_ptr, String top_text, Panel** run_panel_ptr, Panel** stop_panel_ptr);
 
     // Panel to edit ventilator parameters.
     void start();
@@ -90,18 +90,8 @@ class EditPanel : public Panel {
     Panel* _run_panel_ptr;
     Panel* _stop_panel_ptr;
 
-    // Limits for ventilator parameters.
-    int _min_respiration_rate = 10;
-    int _max_respiration_rate = 30;
-    int _delta_respiration_rate = 1;
-
-    int _min_exhale = 1;
-    int _max_exhale = 5;
-    int _delta_exhale = 1;
-
-    int _min_tidal_volume = 300;
-    int _max_tidal_volume = 700;
-    int _delta_tidal_volume = 50;
+    // Pointer to ventilator setting limits.
+    VentLimits* _vl_ptr;
 
     // Holds which row is currently being selected.
     int _row = 0;

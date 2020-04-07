@@ -36,10 +36,11 @@ Panel* SplashPanel::update() {
   return _next_ptr;
 }
 
-EditPanel::EditPanel(NhdDisplay* disp_ptr, Encoder* encoder_ptr, ButtonManager* em_button_ptr, ButtonManager* stop_button_ptr, VentSettings* vs_ptr, String top_text, Panel** run_panel_ptr, Panel** stop_panel_ptr) :
+EditPanel::EditPanel(NhdDisplay* disp_ptr, Encoder* encoder_ptr, ButtonManager* em_button_ptr, ButtonManager* stop_button_ptr, VentSettings* vs_ptr, VentLimits* vl_ptr, String top_text, Panel** run_panel_ptr, Panel** stop_panel_ptr) :
   Panel{disp_ptr, encoder_ptr, em_button_ptr, stop_button_ptr, vs_ptr},
   _top_text(top_text),
   _run_panel_d_ptr(run_panel_ptr),
+  _vl_ptr(vl_ptr),
   _stop_panel_d_ptr(stop_panel_ptr) {
     // Build new encoder manager with 4 selections.
     _em_ptr = new EncoderManager(encoder_ptr, 4);
@@ -128,18 +129,18 @@ Panel* EditPanel::update() {
     switch (_row) {
       // Set selections for tidal volume.
       case 1:
-        num_selections = (_max_tidal_volume - _min_tidal_volume) / _delta_tidal_volume + 1;
-        starting_selection = (_vs_ptr->tidal_volume - _min_tidal_volume) / _delta_tidal_volume;
+        num_selections = (_vl_ptr->max_tidal_volume - _vl_ptr->min_tidal_volume) / _vl_ptr->delta_tidal_volume + 1;
+        starting_selection = (_vs_ptr->tidal_volume - _vl_ptr->min_tidal_volume) / _vl_ptr->delta_tidal_volume;
         break;
       // Set selections for respiration rate.
       case 2:
-        num_selections = (_max_respiration_rate - _min_respiration_rate) / _delta_respiration_rate + 1;
-        starting_selection = (_vs_ptr->respiration_rate - _min_respiration_rate) / _delta_respiration_rate;
+        num_selections = (_vl_ptr->max_respiration_rate - _vl_ptr->min_respiration_rate) / _vl_ptr->delta_respiration_rate + 1;
+        starting_selection = (_vs_ptr->respiration_rate - _vl_ptr->min_respiration_rate) / _vl_ptr->delta_respiration_rate;
         break;
       // Set selections for i:e ratio.
       case 3:
-        num_selections = (_max_exhale - _min_exhale) / _delta_exhale + 1;
-        starting_selection = (_vs_ptr->exhale - _min_exhale) / _delta_exhale;
+        num_selections = (_vl_ptr->max_exhale - _vl_ptr->min_exhale) / _vl_ptr->delta_exhale + 1;
+        starting_selection = (_vs_ptr->exhale - _vl_ptr->min_exhale) / _vl_ptr->delta_exhale;
         break;
     }
 
@@ -165,7 +166,7 @@ Panel* EditPanel::update() {
         case 1:
           
           // Calculate new tidal volume amount.
-          _vs_ptr->tidal_volume = _min_tidal_volume + _em_ptr->getSelection() * _delta_tidal_volume;
+          _vs_ptr->tidal_volume = _vl_ptr->min_tidal_volume + _em_ptr->getSelection() * _vl_ptr->delta_tidal_volume;
 
           // Write to the display.
           _disp_ptr->setCursor(1 + _tv_text_length, 1);
@@ -176,7 +177,7 @@ Panel* EditPanel::update() {
         case 2:
 
           // Calculate new respitory rate.
-          _vs_ptr->respiration_rate = _min_respiration_rate + _em_ptr->getSelection() * _delta_respiration_rate;
+          _vs_ptr->respiration_rate = _vl_ptr->min_respiration_rate + _em_ptr->getSelection() * _vl_ptr->delta_respiration_rate;
           
           // Write to the display.
           _disp_ptr->setCursor(1 + _rr_text_length, 2);
@@ -187,7 +188,7 @@ Panel* EditPanel::update() {
         case 3:
 
           // Calculate new i:e ratio.
-          _vs_ptr->exhale = _min_exhale + _em_ptr->getSelection() * _delta_exhale;
+          _vs_ptr->exhale = _vl_ptr->min_exhale + _em_ptr->getSelection() * _vl_ptr->delta_exhale;
 
           // Write to the display.
           _disp_ptr->setCursor(1 + _i_e_text_length, 3);
