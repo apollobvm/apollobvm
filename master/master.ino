@@ -1,24 +1,33 @@
 #include "panel.h"
 #include "Wire.h"
 
+// Address of slave.
 #define SLAVE_ADDR 8
 
-NhdDisplay display(3);
-Encoder enc(5,6);
-ButtonManager encoder_button(7, true);
-ButtonManager stop_button(11, false);
+// Pin definitions.
+#define DISPLAY_PIN 3
+#define ENC_CLK_PIN 6
+#define ENC_DT_PIN 5
+#define ENC_BUTTON_PIN 7
+#define STOP_BUTTON_PIN 11
 
-// Calibration for TV
-int cal[9] = {950, 1062, 1155, 1238, 1320, 1393, 1465, 1538, 1610};
+// Init peripherals.
+NhdDisplay display(DISPLAY_PIN);
+Encoder enc(ENC_DT_PIN, ENC_CLK_PIN);
+ButtonManager encoder_button(ENC_BUTTON_PIN, true);
+ButtonManager stop_button(STOP_BUTTON_PIN, false);
 
-// Default settings
+// Default settings.
 VentSettings vs = {'X', 500, 12, 1, 3, 0, 00, 20, 0, 0, 0, false}; 
 
-// String params
+// Calibration for TV on Ambu bag SPUR II.
+int cal[9] = {950, 1062, 1155, 1238, 1320, 1393, 1465, 1538, 1610};
+
+// String params for splash screens.
 String* splash_text = new String[4];
-
-
 String* warning_text = new String[4];
+
+// Init panel pointers.
 SplashPanel* splash_ptr;
 SplashPanel* warning_ptr;
 EditPanel* start_ptr;
@@ -26,6 +35,7 @@ EditPanel* apply_ptr;
 RunningPanel* run_ptr;
 PausePanel* pause_ptr;
 
+// Init display panel pointer.
 Panel* cur_panel;
 
 void setup()
@@ -72,6 +82,7 @@ void setup()
 
 void loop()
 {
+
   // Poll button status.
   encoder_button.poll();
   stop_button.poll();
@@ -88,8 +99,6 @@ void loop()
   // Transmit to the device if necessary.
   if (vs.send)
     transmit();
-
-
 }
 
 void transmit() {
@@ -102,22 +111,21 @@ void transmit() {
 
   // Send settings to controller unit, if we're loading.
   if (vs.mode == 'L') {
-      // TODO Build lookup table based on real information.
-      /*int setpoint = map(vs.tidal_volume, 300, 650, 887, 1610);*/
-      /*int setpoint = 1538;*/
-      /*int setpoint = tv_setpoint.valueAt(vs.tidal_volume);*/
-      int setpoint = cal[(vs.tidal_volume - 300)/50];
-      Wire.write(byte(setpoint >> 8));
-      Wire.write(byte(setpoint & 0x00FF));
-      Wire.write(byte(vs.respiration_rate));
-      Wire.write(byte(vs.inhale));
-      Wire.write(byte(vs.exhale));
-      Wire.write(byte(vs.hold_seconds));
-      Wire.write(byte(vs.hold_decimals));
-      Wire.write(byte(vs.delta_time));
+    // Calculate setpoint based on calibration.
+    int setpoint = cal[(vs.tidal_volume - 300)/50];
 
-      // Set the mode to on as device will start.
-      vs.mode = 'O';
+    // Send the ventilation parameters to slave.
+    Wire.write(byte(setpoint >> 8));
+    Wire.write(byte(setpoint & 0x00FF));
+    Wire.write(byte(vs.respiration_rate));
+    Wire.write(byte(vs.inhale));
+    Wire.write(byte(vs.exhale));
+    Wire.write(byte(vs.hold_seconds));
+    Wire.write(byte(vs.hold_decimals));
+    Wire.write(byte(vs.delta_time));
+
+    // Set the mode to on as device will start.
+    vs.mode = 'O';
   }
 
   // Send i2c message.
@@ -125,7 +133,5 @@ void transmit() {
 
   // Sent settings so disable send.
   vs.send = false;
-
-
 }
 

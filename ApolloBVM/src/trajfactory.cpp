@@ -13,19 +13,10 @@ Trajectory* TrajFactory::buildSetpoint(int setpoint){
   
   // Calculate total cycle time based on respitory rate.
   _t_tot = 60.0/_respitory_rate;
-  //Serial.print("Total: ");
-  //Serial.println(_t_tot);
 
   // Calculate breath cycle times.
   _t_out = (_t_tot - _t_hold) / (_i_e_ratio + 1);
   _t_in = _i_e_ratio * _t_out;
-  //Serial.print("Time out: ");
-  //Serial.println(_t_out);
-  //Serial.print("Time in: ");
-  //Serial.println(_t_in);
-
-  // Take the hold time out of the exhale cycle. Do this to ensure respitory rate is correct.
-  //_t_out -= _t_hold;
 
   // Calculate kinematics for curve generation.
   float x_h = (_x_s + _x_0)/2.0;
@@ -82,15 +73,7 @@ Trajectory* TrajFactory::buildSetpoint(int setpoint){
     }
   }
 
-  //Serial.println("---- TransFactory Trajectory ----");
-  //for (int i = 0; i < _length; i++) {
-    //Serial.println(*(_traj_pos + i));
-    //delay(5);
-
-  //}
-
   // Create and return trajectory.
-  //Trajectory traj = 
   return new Trajectory(_delta_t, _traj_pos, _length);
 }
 
@@ -106,6 +89,7 @@ Trajectory* TrajFactory::build(int respitory_rate, float i_e_ratio, int setpoint
   return buildSetpoint(setpoint);
 }
 
+// Getters.
 float TrajFactory::getTotalTime(){
   return _t_tot;
 }
@@ -125,4 +109,3 @@ int TrajFactory::getDeltaTime(){
 int TrajFactory::getLength(){
   return _length;
 }
-

@@ -20,10 +20,17 @@ class Trajectory {
     int getDeltaTime();
 
   private:
+    
+    // Current step in the trajectory.
     int _cur_step;
-    int _length;
-    int* _traj_pos;
-    int _delta_t;
 
+    // Length of the trajectory.
+    int _length;
+
+    // Pointer to array of positions.
+    int* _traj_pos;
+
+    // Delta time between positions.
+    int _delta_t;
 };
 #endif
