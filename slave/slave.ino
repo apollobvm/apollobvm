@@ -6,7 +6,8 @@
 #define SLAVE_ADDR 8
 
 // Pin definitions.
-#define SERVO_PIN 9
+#define SERVO_PIN_1 9
+#define SERVO_PIN_2 10
 
 // Limits of servo.
 #define SERVO_MIN 2400
@@ -17,7 +18,8 @@ TrajFactory tf = TrajFactory();
 Trajectory* traj_ptr = 0;
 
 // Init servo class.
-Servo servo;
+Servo servo_1;
+Servo servo_2;
 
 // Init current ventilator params.
 int rr;
@@ -39,7 +41,8 @@ void setup() {
   Serial.begin(9600);
 
   // Attach servo.
-  servo.attach(SERVO_PIN);
+  servo_1.attach(SERVO_PIN_1);
+  servo_2.attach(SERVO_PIN_2);
 
   // Set state to off.
   state = 'X';
@@ -84,7 +87,8 @@ void moveTo(int pos, int delta_t){
   Serial.println(pos);
 
   // Move the servos to next setpoint and wait delta time.
-  servo.writeMicroseconds(SERVO_MIN-pos);
+  servo_1.writeMicroseconds(SERVO_MIN-pos);
+  servo_2.writeMicroseconds(SERVO_MIN-pos);
   delay(delta_t);
 }
 
