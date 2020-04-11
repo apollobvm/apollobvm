@@ -29,20 +29,16 @@ The master controller is mainly tasked with running the user display and sending
 3.  Add the ApolloBVM library to the Arduino IDE:
     1. In the Arduino IDE, go to Sketch->Include Library->Add .ZIP Library...
     2. Navigate to and click on the library zip or library directory inside the extracted release. This will be a file that looks like "ApolloBVM.zip" or a directory with the name "ApolloBVM".
-4. Add ApolloBVM library dependencies.
-    1. In the Arduino IDE, go to Tools->Manage Libraries...
-    2. In the Library Manager, type "Encoder" into the search box.
-    3. Scroll down and locate the "Encoder by Paul Stoffregen" library and then click install.
-5. Open the slave and master code.
+4. Open the slave and master code.
     1. In the Arduino IDE, go to File->Open...
     2. Navigate to and click on the slave.ino file inside the extracted release.
     3. Repeat this process for the master.ino file.
-6. Flash the Arduino boards with the firmware.
+5. Flash the Arduino boards with the firmware.
     1. Plug the first Arduino board into your computer.
     2. In the Arduino IDE, go to Tools->Board and select the Arduino board you are using.
     3. Next, in the Arduino IDE, go to Tools->Port and select the port for your Arduino board.
     4. Push the arrow button to upload code on the Arduino IDE window with the slave code.
     5. Unplug the first Arduino, plug in the second, and repeat the above step for the master code.
-7. Follow the wiring diagram on the [ApolloBVM website](http://oedk.rice.edu/apollobvm) to complete assembly.
+6. Follow the wiring diagram on the [ApolloBVM website](http://oedk.rice.edu/apollobvm) to complete assembly.
     
 
