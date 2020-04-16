@@ -9,7 +9,7 @@
 #define ENC_CLK_PIN 6
 #define ENC_DT_PIN 5
 #define ENC_BUTTON_PIN 7
-#define STOP_BUTTON_PIN 11
+#define STOP_BUTTON_PIN 10
 
 // Init peripherals.
 NhdDisplay display(DISPLAY_PIN);
