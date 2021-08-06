@@ -1,0 +1,274 @@
+.cnFooterPoweredByContainer,DIV.WaGadgetMembershipApplicationStateFillData DIV#idTitleContainer,
+DIV.WaGadgetMembershipApplicationStateFillData DIV.infoOuterContainer,
+DIV.generalFormOuterContainer DIV.generalFormContainer H2.stepTitle,
+DIV.WaGadgetMembershipApplication DIV.WaGadgetMembershipApplicationStateReview DIV#idTitleContainer,
+DIV.WaGadgetMembershipApplication DIV.WaGadgetMembershipApplicationStateReview DIV.infoOuterContainer {
+  display: none;
+}
+
+
+/***  Type 002                                                   ***/
+
+/* title */
+
+DIV.artBoxContainerType-002 DIV.artBoxGeneralInnerContainer DIV.artBoxTitleContainer
+{
+  border: 1px solid #FFFFFF;
+  background: #305881;
+}
+
+DIV.artBoxContainerType-002 DIV.artBoxGeneralInnerContainer DIV.artBoxTitleInnerContainer DIV.artBoxInner
+{
+  padding: 10px 18px 10px 18px;
+}
+
+DIV.artBoxContainerType-002 DIV.artBoxGeneralInnerContainer DIV.artBoxTitleInnerContainer DIV.artBoxContent,
+.cnPrimaryContentBlock1Content DIV.artBoxContainerType-002 H4.artBoxTitle
+{
+  color: #FFFFFF; 
+}
+
+/* content */
+
+DIV.artBoxContainerType-002 DIV.artBoxGeneralInnerContainer DIV.artBoxContentContainer
+{
+  margin-top: 3px;
+  border: 1px solid #FFFFFF;
+  background: #EEEEEE;
+}
+
+DIV.artBoxContainerType-002 DIV.artBoxGeneralInnerContainer DIV.artBoxContentInnerContainer DIV.artBoxInner
+{
+  padding: 12px 12px; 
+}
+
+/* module */
+
+.cnPrimaryContentBlock1Content DIV.artBoxContainerType-002 DIV.moduleViewType-0 DIV.moduleItem
+{
+  padding: 5px 6px 7px 6px;
+}
+
+.cnPrimaryContentBlock1Content DIV.artBoxContainerType-002 DIV.moduleViewType-0 DIV.moduleSeparator
+{
+  border-top: 1px dashed #305881;
+}
+
+
+DIV.artBoxContainerType-002 DIV.artBoxGeneralInnerContainer DIV.artBoxContentInnerContainer DIV.artBoxContent,
+.cnPrimaryContentBlock1Content DIV.artBoxContainerType-002 DIV.moduleViewType-0 DIV.itemInfoContainer
+{
+  color: #616161;
+}
+.cnPrimaryContentBlock1Content DIV.artBoxContainerType-002 DIV.moduleViewType-0 A:link,
+.cnPrimaryContentBlock1Content DIV.artBoxContainerType-002 DIV.moduleViewType-0 A:active,
+.cnPrimaryContentBlock1Content DIV.artBoxContainerType-002 DIV.moduleViewType-0 A:visited,
+.cnPrimaryContentBlock1Content DIV.artBoxContainerType-002 DIV.moduleViewType-0 A:hover
+{
+  color: #305881;
+}
+
+.cnPrimaryContentBlock1Content DIV.artBoxContainerType-002 DIV.moduleViewType-0 A:hover
+{
+  color: #62BD19;
+}
+
+#PAGEID_329392 .registrationInfo label {display:none;}
+
+
+
+.cnMainContainer .mainMenu LI.itemNormal DIV.dynamicMenuLevelContainer,
+.cnMainContainer .mainMenu LI.itemNormal UL.dynamic,
+.cnMainContainer .mainMenu LI.itemNormal:hover UL.dynamic,
+.cnMainContainer .mainMenu LI.itemNormal A:hover UL.dynamic,
+.cnMainContainer .mainMenu LI.itemNormal TABLE.dynamic,
+.cnMainContainer .mainMenu TD.itemNormal DIV.dynamicMenuLevelContainer,
+.cnMainContainer .mainMenu TD.itemNormal UL.dynamic,
+.cnMainContainer .mainMenu TD.itemNormal:hover UL.dynamic,
+.cnMainContainer .mainMenu TD.itemNormal A:hover UL.dynamic,
+.cnMainContainer .mainMenu TD.itemNormal TABLE.dynamic,
+.cnMainContainer .mainMenu SPAN.itemNormal DIV.dynamicMenuLevelContainer,
+.cnMainContainer .mainMenu SPAN.itemNormal UL.dynamic,
+.cnMainContainer .mainMenu SPAN.itemNormal:hover UL.dynamic,
+.cnMainContainer .mainMenu SPAN.itemNormal A:hover UL.dynamic,
+.cnMainContainer .mainMenu SPAN.itemNormal TABLE.dynamic
+{
+display: none;
+}
+.cnMainContainer .mainMenu LI.itemNormal
+{
+margin-bottom: 0;
+}
+
+
+ html > body .WaGadgetBlogStateList #idBlogPostListContainer div.boxBodyContentContainer 
+{
+  display: none;
+}
+
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 35px;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.google-maps {
+    position: relative;
+    padding-bottom: 90%; // (450 ÷ 500 = 0.9 = 90%)
+    height: 0;
+    overflow: hidden;
+}
+.google-maps iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.calendar-container {
+    position: relative;
+    padding-bottom: 75%;
+    height: 0;
+    overflow: hidden;
+}
+
+.calendar-container iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+@media (max-width: 550px) {
+    .big-container {
+        display: none;
+    }
+}
+@media (min-width: 550px) {
+    .small-container {
+        display: none;
+    }
+}
+/* Responsive iFrame */
+ 
+.responsive-iframe-container {
+    position: relative;
+    padding-bottom: 150%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+ 
+.responsive-iframe-container iframe,   
+.vresponsive-iframe-container object,  
+.vresponsive-iframe-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.intrinsic-container {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+}
+ 
+/* 16x9 Aspect Ratio */
+.intrinsic-container-16x9 {
+  padding-bottom: 56.25%;
+}
+ 
+/* 4x3 Aspect Ratio */
+.intrinsic-container-4x3 {
+  padding-bottom: 75%;
+}
+ 
+.intrinsic-container iframe {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.fieldSubContainer .fieldLabel {
+    font-size: 18px;
+    line-height: normal;
+    color: black; 
+font-weight: bold;
+}
+
+.WaGadgetBlogStateList .boxBodyInfoContainer .postedByComment
+{
+display: none;
+}
+
+.fieldSubContainer .fieldLabel strong.mandatoryLabel {
+ font-weight: bold;
+}
+
+       
+
+/*Fixed by WA Support 07/10/2015*/
+.WaGadgetCustomMenu .orientationHorizontal li:after
+{ display: none; }
+.WaGadgetCustomMenu .orientationHorizontal li
+{ margin: 0 }
+/*end*/
+
+
+//access.php
+
+<?php
+//put sha1() encrypted password here - example is 'hello'
+$password = array("amyk1", "amyk2", "amyk3", "amyk4");
+if (in_array(sha1($_POST['password']), $passwords)) {
+
+session_start();
+if (!isset($_SESSION['loggedIn'])) {
+   $_SESSION['loggedIn'] = false;
+}
+
+if (isset($_POST['password'])) {
+  if (sha1($_POST['password']) == $password) {
+    $_SESSION['loggedIn'] = true;
+  } else {
+     die ('Incorrect password');
+  }
+} 
+
+if (!$_SESSION['loggedIn']): ?> 
+<?php
+exit();
+endif;
+?> 
+
+
+
+$red: #881d12;
+
+
+@mixin bump {
+    0%      {transform: scale(1); }
+    50%     {transform: scale(1.5); }
+    100%    {transform: scale(1); }
+}
+
+@keyframes bump1 { @include bump; }
+@keyframes bump2 {@include bump;}
+
+body {padding:50px; background:#ededed;}

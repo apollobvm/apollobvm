@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html lang="en" class="no-js ie6 "><![endif]-->
+<!--[if IE 7 ]><html lang="en" class="no-js ie7 "> <![endif]-->
+<!--[if IE 8 ]><html lang="en" class="no-js ie8 "> <![endif]-->
+<!--[if IE 9 ]><html lang="en" class="no-js ie9 "><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html class="no-js " lang="en"><!--<![endif]--><head id="Head1">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="OEDK%20-%20Rice%20University%20-%20ApolloBVM_files/combined.css" rel="stylesheet" type="text/css"><link href="OEDK%20-%20Rice%20University%20-%20ApolloBVM_files/customStyles.css" rel="stylesheet" type="text/css"><link href="OEDK%20-%20Rice%20University%20-%20ApolloBVM_files/user.css" rel="stylesheet" type="text/css"><link href="OEDK%20-%20Rice%20University%20-%20ApolloBVM_files/index-44a7298.css" rel="stylesheet" type="text/css"><link href="OEDK%20-%20Rice%20University%20-%20ApolloBVM_files/shared-ui-compiled.css" rel="stylesheet" type="text/css"><script type="text/javascript" language="javascript" id="idJavaScriptEnvironment">var bonaPage_BuildVer='7.22.0.17810';
+var bonaPage_AdminBackendUrl = '/admin/';
+var bonaPage_StatRes='http://sf.wildapricot.org/WebUI/';
+var bonaPage_InternalPageType = { isUndefinedPage : false,isWebPage : true,isAdminPage : false,isDialogPage : false,isSystemPage : false,isErrorPage : false,isError404Page : false };
+var bonaPage_PageView = { isAnonymousView : true,isMemberView : false,isAdminView : false };
+var WidgetMode = 0;
+var bonaPage_IsUserAnonymous = true;
+var bonaPage_ThemeVer='2bcab902637521272560000000637631843882030000'; var bonaPage_ThemeId = 'bookshelf_textbook.v3.0'; var bonaPage_ThemeVersion = '3.0';
+var bonaPage_id='1860021'; version_id='';
+if (bonaPage_InternalPageType && (bonaPage_InternalPageType.isSystemPage || bonaPage_InternalPageType.isWebPage) && window.self !== window.top) { var success = true; try { var tmp = top.location.href; if (!tmp) { top.location = self.location; } } catch (err) { try { if (self != top) { top.location = self.location; } } catch (err) { try { if (self != top) { top = self; } success = false; } catch (err) { success = false; } } success = false; } if (!success) { window.onload = function() { document.open('text/html', 'replace'); document.write('<ht'+'ml><he'+'ad></he'+'ad><bo'+'dy><h1>Wrong document context!</h1></bo'+'dy></ht'+'ml>'); document.close(); } } }
+try { function waMetricsGlobalHandler(args) { if (WA.topWindow.waMetricsOuterGlobalHandler && typeof(WA.topWindow.waMetricsOuterGlobalHandler) === 'function') { WA.topWindow.waMetricsOuterGlobalHandler(args); }}} catch(err) {}
+ try { if (parent && parent.BonaPage) parent.BonaPage.implementBonaPage(window); } catch (err) { }
+try { document.write('<style type="text/css"> .WaHideIfJSEnabled, .HideIfJSEnabled { display: none; } </style>'); } catch(err) {}
+var bonaPage_WebPackRootPath = '//sf.wildapricot.org/WebUI/built7.22.0.17810/scripts/public/react/';</script><script type="text/javascript" language="javascript" src="OEDK%20-%20Rice%20University%20-%20ApolloBVM_files/CheckHttpsAuthentication" id="idCheckHttpsAuthentication"></script><script type="text/javascript" language="javascript" src="OEDK%20-%20Rice%20University%20-%20ApolloBVM_files/bonapagetop-compiled.js" id="idBonaPageTop"></script><script type="text/javascript" language="javascript" src="OEDK%20-%20Rice%20University%20-%20ApolloBVM_files/index-44a7298.js" id="ReactPublicJs"></script><script type="text/javascript" language="javascript" src="OEDK%20-%20Rice%20University%20-%20ApolloBVM_files/shared-ui-compiled.js" id="idSharedJs"></script><script type="text/javascript" language="javascript" src="OEDK%20-%20Rice%20University%20-%20ApolloBVM_files/General.js" id=""></script><script type="text/javascript" language="javascript" src="OEDK%20-%20Rice%20University%20-%20ApolloBVM_files/combined.js" id=""></script><title>OEDK - Rice University - ApolloBVM</title>
+<meta name="Keywords" content="&lt;meta name=&quot;google-site-verification&quot; content=&quot;KqzyEPV337VwEJEzOe2EPGVlF0J-gOPI8HT_mMuryWw&quot; /&gt;"><meta name="Description" content="&lt;meta name=&quot;google-site-verification&quot; content=&quot;KqzyEPV337VwEJEzOe2EPGVlF0J-gOPI8HT_mMuryWw&quot; /&gt;"><link rel="shortcut icon" type="image/ico" href="http://oedk.rice.edu/Resources/Pictures/OEDKlogo.ico"><meta name="google-site-verification" content="KqzyEPV337VwEJEzOe2EPGVlF0J-gOPI8HT_mMuryWw">
+<link rel="stylesheet" href="OEDK%20-%20Rice%20University%20-%20ApolloBVM_files/nivo-slider.css" type="text/css" media="screen">
+<script src="OEDK%20-%20Rice%20University%20-%20ApolloBVM_files/jquery.js" type="text/javascript"></script><link rel="search" type="application/opensearchdescription+xml" title="oedk.rice.edu" href="http://oedk.rice.edu/opensearch.ashx"></head>
+  <body id="PAGEID_1860021" class="publicContentView LayoutMain">
+<div class="mLayout layoutMain state1" id="mLayout">
+
+<script type="text/javascript">
+/*
+var layoutState = document.getElementById('mLayout');
+var rsStateWidth1 = 960;
+var rsStateWidth2 = 600;
+var rsStateWidth3 = 320;
+
+function SetStateLayout()
+{
+	var bodyWidth = BonaPage.getInnerWidth();
+
+	layoutState.className = layoutState.className.replace(/\s?state\d+/g,"");
+
+	if( bodyWidth >= rsStateWidth1 )
+		layoutState.className += ' state1';
+	if( bodyWidth >= rsStateWidth2 && bodyWidth < rsStateWidth1 )
+		layoutState.className += ' state2';
+	if( bodyWidth < rsStateWidth2 )
+		layoutState.className += ' state3';
+
+	// message
+	if( !document.getElementById('textWidth') )
+	{
+		var firstEl = layoutState.getElementsByTagName('div')[0];
+		var newDivElem = document.createElement('div');
+		newDivElem.id = 'textWidth';
+		layoutState.insertBefore(newDivElem, firstEl);
+	}
+	document.getElementById('textWidth').innerHTML = 'bodyWidth: ' + bodyWidth;
+}
+
+
+jq$(function(){
+
+	SetStateLayout();
+
+	if (window.addEventListener)
+	{
+		window.addEventListener('resize', function() { SetStateLayout(); }, false);
+		window.addEventListener("orientationchange", function() { SetStateLayout(); }, false);
+	}
+
+});*/
+
+</script> <!-- header zone -->
+		<div class="zoneHeader1">
+			<div class="container_12">
+				<div class="s1_grid_12 s2_grid_12 s3_grid_12">
+<div id="idHeaderContentHolder" data-componentid="Header" class="WaPlaceHolder WaPlaceHolderHeader" style=""><div style=""><div id="id_inCMMK2" data-componentid="inCMMK2" class="WaLayoutContainerFirst" style=""><table class="WaLayoutTable" style="" cellspacing="0" cellpadding="0"><tbody><tr data-componentid="inCMMK2_row" class="WaLayoutRow"><td id="id_iOut6GN" data-componentid="iOut6GN" class="WaLayoutItem" style="width:69%;"><div id="id_qJF1iHS" class="WaLayoutPlaceHolder placeHolderContainer" data-componentid="qJF1iHS" style=""><div style=""><div id="id_k5s9ElW" class="WaGadgetOnly WaGadgetCustomMenu  menuStyleNone" style="margin-bottom:10px;" data-componentid="k5s9ElW"><div class="gadgetStyleBody " style="" data-areaheight="auto">
+<ul class="orientationHorizontal alignLeft">
+
+<li>
+			<a href="http://oedk.rice.edu/events" title="Events">Events</a>
+		</li>
+<li>
+			<a href="http://oedk.rice.edu/news" title="News">News</a>
+		</li>
+<li>
+			<a href="http://oedk.rice.edu/faqs" title="FAQs">FAQs</a>
+		</li>
+<li>
+			<a href="http://oedk.rice.edu/getinvolved" title="Support">Support</a>
+		</li>
+</ul>
+
+</div>
+</div></div></div></td><td style="" data-componentid="iOut6GN_separator" class="WaLayoutSeparator"><div style="width: inherit;"></div></td><td id="id_vmCFoYo" data-componentid="vmCFoYo" class="WaLayoutItem" style="width:31%;"><div id="id_tSsjJWj" class="WaLayoutPlaceHolder placeHolderContainer" data-componentid="tSsjJWj" style=""><div style=""><div id="id_EJLBK6l" class="WaGadgetOnly WaGadgetSocialProfile  gadgetThemeStyle" style="" data-componentid="EJLBK6l"><div class="gadgetStyleBody " style="" data-areaheight="auto">
+<ul class="orientationHorizontal  alignRight">
+
+
+<li>
+				<a href="https://www.facebook.com/OEDKatRice" title="Facebook" class="Facebook" target="_blank"></a>
+			</li>
+<li>
+				<a href="https://twitter.com/Rice_OEDK" title="Twitter" class="Twitter" target="_blank"></a>
+			</li>
+<li>
+				<a href="https://www.youtube.com/user/OEDKRice" title="YouTube" class="YouTube" target="_blank"></a>
+			</li>
+		
+</ul>
+
+</div>
+</div></div></div></td></tr></tbody></table> </div><div id="id_S6CyWvo" data-componentid="S6CyWvo" class="WaLayoutContainer" style=""><table class="WaLayoutTable" style="" cellspacing="0" cellpadding="0"><tbody><tr data-componentid="S6CyWvo_row" class="WaLayoutRow"><td id="id_eN4R7DL" data-componentid="eN4R7DL" class="WaLayoutItem" style="width:64%;"><div id="id_Chq2A5j" class="WaLayoutPlaceHolder placeHolderContainer" data-componentid="Chq2A5j" style=""><div style=""><div id="idHeaderContent" class="WaGadgetOnly WaGadgetContent headerContent gadgetStyleNone" style="margin-top:20px;margin-bottom:0px;" data-componentid="OAtODSW"><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editablearea="0" data-areaheight="auto">
+<a href="http://oedk.rice.edu/"><img src="OEDK%20-%20Rice%20University%20-%20ApolloBVM_files/OEDKRiceLogoNEW2019.png" alt="" title="" width="404" height="98" border="0"></a><br></div>
+</div></div></div></td><td style="width:20px;" data-componentid="eN4R7DL_separator" class="WaLayoutSeparator"><div style="width: inherit;"></div></td><td id="id_lQm1Hlu" data-componentid="lQm1Hlu" class="WaLayoutItem" style="width:36%;"><div id="id_oNEh9TV" class="WaLayoutPlaceHolder placeHolderContainer" data-componentid="oNEh9TV" style=""><div style=""><div id="id_fylOOTM" class="WaGadgetFirst WaGadgetLoginButton  gadgetStyleNone" style="margin-top:0px;" data-componentid="fylOOTM"><div class="alignRight">
+  <div class="loginBoxLinkContainer">
+    <a class="loginBoxLinkButton" href="http://oedk.rice.edu/Sys/Login">Log in</a>
+  </div>
+  </div>
+</div><div id="id_c2aB9Np" class="WaGadgetLast WaGadgetSiteSearch  gadgetStyleNone" style="margin-right:5px;margin-bottom:0px;" data-componentid="c2aB9Np"><div class="gadgetStyleBody " style="" data-areaheight="auto">
+<div class="searchBoxOuter alignRight">
+	<div class="searchBox">
+<form method="post" action="http://oedk.rice.edu/Sys/Search" id="id_c2aB9Np_form" class="generalSearchBox" data-disableinadminmode="true">
+<span class="searchBoxFieldContainer"><input class="searchBoxField" type="text" name="searchString" id="idid_c2aB9Np_searchBox" maxlength="300" autocomplete="off" placeholder="Enter search string"></span>
+<div class="autoSuggestionBox" id="idid_c2aB9Np_resultDiv"></div>
+</form></div>
+	</div>
+	<script type="text/javascript">
+		(function(){
+
+			function init()
+			{
+				var model = {};
+				model.gadgetId = 'idid_c2aB9Np';
+				model.searchBoxId = 'idid_c2aB9Np_searchBox';
+				model.resultDivId = 'idid_c2aB9Np_resultDiv';
+				model.selectedTypes = '31';
+				model.searchTemplate = 'http://oedk.rice.edu/Sys/Search?q={0}&types={1}&page={2}';
+				model.searchActionUrl = '/Sys/Search/DoSearch';
+				model.GoToSearchPageTextTemplate = 'Search for &#39;{0}&#39;';
+				model.autoSuggest = true;
+				var WASiteSearch = new WASiteSearchGadget(model);
+			}
+
+			jq$(document).ready(init);
+		}) ();
+	</script>
+</div>
+</div></div></div></td></tr></tbody></table> </div><div id="id_yOhi7Wr" class="WaGadget WaGadgetMenuHorizontal  menuStyle004" style="margin-bottom:20px;" data-componentid="yOhi7Wr"><div class="menuBackground"></div>
+<div class="menuInner">
+	<ul class="firstLevel">
+<li class=" ">
+	<div class="item">
+		<a href="http://oedk.rice.edu/" title="Home"><span>Home</span></a>
+</div>
+</li>
+	
+<li class=" ">
+	<div class="item">
+		<a href="http://oedk.rice.edu/about" title="About"><span>About</span></a>
+</div>
+</li>
+	
+<li class=" ">
+	<div class="item">
+		<a href="http://oedk.rice.edu/oedk-resources" title="Resources"><span>Resources</span></a>
+</div>
+</li>
+	
+<li class=" ">
+	<div class="item">
+		<a href="http://oedk.rice.edu/ApolloBVM-DIY" title="ApolloBVM DIY"><span>ApolloBVM DIY</span></a>
+</div>
+</li>
+	
+<li class=" ">
+	<div class="item">
+		<a href="http://oedk.rice.edu/projects" title="Projects"><span>Projects</span></a>
+</div>
+</li>
+	
+<li class=" ">
+	<div class="item">
+		<a href="http://oedk.rice.edu/safetyguidelines" title="Safety Guidelines"><span>Safety Guidelines</span></a>
+</div>
+</li>
+	
+<li class=" ">
+	<div class="item">
+		<a href="http://oedk.rice.edu/discussions" title="Discussion Boards"><span>Discussion Boards</span></a>
+</div>
+</li>
+	
+</ul>
+</div>
+
+<script type="text/javascript">
+	jq$(function()
+	{
+		var gadgetHorMenu = jq$('#id_yOhi7Wr'),
+			gadgetHorMenuContainer = gadgetHorMenu.find('.menuInner'),
+			firstLevelMenu = gadgetHorMenu.find('ul.firstLevel'),
+			holderInitialMenu = firstLevelMenu.children(),
+			outsideItems = null,
+			phantomElement = '<li class="phantom"><div class="item"><a href="#"><span>&#x2261;</span></a><ul class="secondLevel"></ul></div></li>',
+			placeHolder = gadgetHorMenu.parents('.WaLayoutPlaceHolder'),
+			placeHolderId = placeHolder && placeHolder.attr('data-componentId'),
+			mobileState = false,
+			rsStateWidth2 = 617,
+			isTouchSupported = !!(('ontouchstart' in window) || (window.DocumentTouch && document instanceof DocumentTouch) || (navigator.msPointerEnabled && navigator.msMaxTouchPoints));
+
+
+		function resizeMenu()
+		{
+			var i,
+				len,
+				fitMenuWidth = 0,
+				menuItemPhantomWidth = 80;
+
+			// background track
+			gadgetHorMenu.find('.menuBackground').css(
+			{
+				'width': jq$('body').width(),
+				'left': ( ( jq$('body').width() - gadgetHorMenu.width() ) * -0.5 )
+			});
+
+			firstLevelMenu.html( holderInitialMenu).removeClass('adapted').css({ width: 'auto' }); // restore initial menu
+
+			if( !gadgetHorMenuContainer.find('.menuButton').size() )
+			{
+				gadgetHorMenuContainer.prepend('<div class="menuButton"></div>');
+
+				gadgetHorMenuContainer.find('.menuButton').on("click",function()
+				{
+					gadgetHorMenuContainer.find('ul.firstLevel').toggle();
+					return false;
+				});
+
+				jq$('body').on("click",function()
+				{
+					if( mobileState )
+						gadgetHorMenuContainer.find('ul.firstLevel').hide();
+				});
+			}
+
+			// for state 3
+			if( jq$(window).width() < rsStateWidth2 && mobileState == false )
+			{
+				gadgetHorMenuContainer.find('ul.firstLevel').attr('style','');
+				mobileState = true;
+
+				return false;
+			}
+
+			if( jq$(window).width() >= rsStateWidth2 )
+			{
+				gadgetHorMenuContainer.find('ul.firstLevel').attr('style','');
+				mobileState = false;
+			}
+
+
+			if( firstLevelMenu.width() > gadgetHorMenuContainer.width() ) // if menu oversize
+			{
+				menuItemPhantomWidth = firstLevelMenu.addClass('adapted').append( phantomElement).children('.phantom').width();
+
+				for( i = 0, len = holderInitialMenu.size(); i <= len; i++ )
+				{
+					fitMenuWidth += jq$( holderInitialMenu.get(i) ).width();
+
+					if( fitMenuWidth + menuItemPhantomWidth > gadgetHorMenuContainer.width() )
+					{
+						outsideItems = firstLevelMenu.children(':gt('+(i-1)+'):not(.phantom)').remove();
+						firstLevelMenu.find('.phantom > .item > ul').append( outsideItems);
+						break;
+					}
+				}
+				gadgetHorMenu.find('.phantom > .item > a').click(function(){ return false; });
+			}
+
+			disableFirstTouch();
+
+			firstLevelMenu.css( 'width', '' ); // restore initial menu width
+			firstLevelMenu.children().removeClass('last-child').eq(-1).addClass('last-child'); // add last-child mark
+		}
+
+		resizeMenu();
+
+		jq$(window).resize(function()
+		{
+			resizeMenu();
+		});
+
+		function onLayoutColumnResized(sender, args)
+		{
+			args = args || {};
+
+			if (placeHolderId && (placeHolderId == args.leftColPlaceHolderId || placeHolderId == args.rightColPlaceHolderId))
+			{
+				resizeMenu();
+			}
+		}
+
+		BonaPage.addPageStateHandler(BonaPage.PAGE_PARSED, function() { WA.Gadgets.LayoutColumnResized.addHandler(onLayoutColumnResized); });
+		BonaPage.addPageStateHandler(BonaPage.PAGE_UNLOADED, function() { WA.Gadgets.LayoutColumnResized.removeHandler(onLayoutColumnResized); });
+
+        function disableFirstTouch()
+        {
+         if (!isTouchSupported) return;
+
+          jq$('#id_yOhi7Wr').find('.menuInner li.dir > .item > a').on( 'click', function(event)
+          {
+            if( !this.touchCounter )
+              this.touchCounter = 0;
+
+            if( this.touchCounter >= 1 )
+            {
+              this.touchCounter = 0;
+              return true;
+            }
+            this.touchCounter++;
+
+            if (!mobileState)
+            {
+              WA.stopEventDefault(event);
+            }
+          });
+
+          jq$('#id_yOhi7Wr').find('.menuInner li.dir > .item > a').on( 'mouseout', function(event)
+          {
+            if( !this.touchCounter )
+              this.touchCounter = 0;
+            this.touchCounter = 0;
+          });
+        }
+
+        disableFirstTouch();
+	});
+</script></div><div id="id_eDPsrSm" data-componentid="eDPsrSm" class="WaLayoutContainer" style=""><table class="WaLayoutTable" style="" cellspacing="0" cellpadding="0"><tbody><tr data-componentid="eDPsrSm_row" class="WaLayoutRow"><td id="id_BwbHCXn" data-componentid="BwbHCXn" class="WaLayoutItem" style="width:51%;"><div id="id_wdYxNL1" class="WaLayoutPlaceHolder placeHolderContainer" data-componentid="wdYxNL1" style=""><div style=""><div id="id_Hxm4UbI" class="WaGadgetFirst WaGadgetContent  gadgetStyleNone" style="margin-top:20px;" data-componentid="Hxm4UbI"><div class="gadgetStyleBody gadgetContentEditableArea" style="padding-top:20px;" data-editablearea="0" data-areaheight="auto">
+<h1></h1>
+<p><font style="font-size: 30px;" face="Oswald"><img src="OEDK%20-%20Rice%20University%20-%20ApolloBVM_files/ApolloBVM%2520Logo%2520FINALcolor-01.png" alt="" title="" border="0">ApolloBVM - Emergency Use Ventilator<br></font><font style="font-size: 18px;" face="Arial, Helvetica, sans-serif">Automated Bag Valve Mask</font><br><br><font style="font-size: 24px;" face="Oswald" color="#223d61">Rice University</font></p>
+<p><br></p></div>
+</div><div id="id_NgogNpv" class="WaGadgetLast WaGadgetContent  gadgetStyleNone" style="" data-componentid="NgogNpv"><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editablearea="0" data-areaheight="auto">
+<p><br></p></div>
+</div></div></div></td><td style="" data-componentid="BwbHCXn_separator" class="WaLayoutSeparator"><div style="width: inherit;"></div></td><td id="id_ypKsVsq" data-componentid="ypKsVsq" class="WaLayoutItem" style="width:18%;"></td><td style="" data-componentid="ypKsVsq_separator" class="WaLayoutSeparator"><div style="width: inherit;"></div></td><td id="id_tzJzWHJ" data-componentid="tzJzWHJ" class="WaLayoutItem" style="width:30%;"><div id="id_8HmVyJD" class="WaLayoutPlaceHolder placeHolderContainer" data-componentid="8HmVyJD" style=""><div style=""><div id="id_DXGLOPp" class="WaGadgetOnly WaGadgetContent  gadgetStyleNone" style="margin-top:20px;" data-componentid="DXGLOPp"><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editablearea="0" data-areaheight="auto">
+<p><strong>For access to files and instructions:</strong></p><a href="http://oedk.rice.edu/ABVM-registration" class="stylizedButton buttonStyle002">REGISTER</a>
+
+<p><a href="http://oedk.rice.edu/Sys/Login?ReturnUrl=%2Fapollobvm-diy" class="stylizedButton buttonStyle002">LOGIN</a><br>
+<br></p></div>
+</div></div></div></td></tr></tbody></table> </div><div id="id_RI3dm5v" class="WaGadget WaGadgetContent  gadgetStyleNone" style="background-color:#9E0B0F;" data-componentid="RI3dm5v"><div class="gadgetStyleBody gadgetContentEditableArea" style="padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;" data-editablearea="0" data-areaheight="auto">
+<p align="center"><font style="font-size: 24px;" color="#ffffff"><strong>ApolloBVM Files are now accessible.&nbsp; </strong><br><strong>Please </strong><a href="http://oedk.rice.edu/ABVM-registration" target="_blank" style=""><strong>register</strong></a><strong> using the link above and follow the prompts.&nbsp;</strong></font></p></div>
+</div><div id="id_D1bWcLU" class="WaGadget WaGadgetContent  gadgetStyleNone" style="" data-componentid="D1bWcLU"><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editablearea="0" data-areaheight="auto">
+<h3>Overview of ApolloBVM:</h3><a href="http://oedk.rice.edu/resources/Pictures/ApolloBVMpictures/ApolloBVM_6590.JPG" title="" target="_blank"><img src="OEDK%20-%20Rice%20University%20-%20ApolloBVM_files/ApolloBVM_6590.JPG" alt="" style="margin: 20px;" width="309" height="232" border="0" align="left"></a>
+
+<p><br></p><p>The ApolloBVM is an automated bag valve mask (BVM) device 
+utilizing off-the-shelf components to provide safe and continuous 
+hospital-grade mechanical ventilation for COVID-19 patients on an 
+open-source basis.</p>
+
+<p>The ApolloBVM is a controllable, automated add-on solution to the 
+existing and widely available Bag Valve Mask. The device compresses the 
+BVM with a mechanical system that is able to provide consistent and 
+accurate ventilation with positive-pressure. This solution exists within
+ the top range of high-acuity limited-operability (HALO) ventilator 
+solutions with an a priori design to produce volume and pressure cycled 
+ventilation that includes positive end-expiratory pressure (PEEP) and 
+enriched oxygen sources.&nbsp;</p>
+
+<p>Controls of the ApolloBVM are familiar and clinician-designed with 
+adult, child, and pediatric settings. They allow for tailored 
+ventilation, adjustable I:E ratios, and variable positive 
+pressure.&nbsp; Please note: This design took inspiration from the 
+2018-2019 Rice University Senior Design Project from&nbsp;<strong><a href="https://engineering.rice.edu/news/student-invention-gives-patients-breath-life">Team Take A Breather</a>.</strong></p></div>
+</div><div id="id_sw7C88h" class="WaGadget WaGadgetContent  gadgetStyleNone" style="" data-componentid="sw7C88h"><div class="gadgetStyleBody gadgetContentEditableArea" style="padding-top:20px;padding-bottom:20px;" data-editablearea="0" data-areaheight="auto">
+<p align="center"><a href="#faqs-home" class="stylizedButton buttonStyle002"><font style="font-size: 24px;" face="Oswald"><font style="font-size: 24px;" face="Oswald">Frequency Asked Questions</font></font></a></p></div>
+</div><div id="id_f3OZ8el" class="WaGadget WaGadgetContent  gadgetStyleNone" style="" data-componentid="f3OZ8el"><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editablearea="0" data-areaheight="auto">
+<h3>ApolloBVM Versions 1 and 2 videos below:</h3></div>
+</div><div id="id_xsSOIDc" data-componentid="xsSOIDc" class="WaLayoutContainer" style=""><table class="WaLayoutTable" style="" cellspacing="0" cellpadding="0"><tbody><tr data-componentid="xsSOIDc_row" class="WaLayoutRow"><td id="id_3X696yc" data-componentid="3X696yc" class="WaLayoutItem" style="width:50%;"><div id="id_aJifYlr" class="WaLayoutPlaceHolder placeHolderContainer" data-componentid="aJifYlr" style=""><div style=""><div id="id_6pcTVwp" class="WaGadgetFirst WaGadgetContent  gadgetStyleNone" style="" data-componentid="6pcTVwp"><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editablearea="0" data-areaheight="auto">
+<p><iframe src="OEDK%20-%20Rice%20University%20-%20ApolloBVM_files/u6aDZoBTRwg.html" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="300" frameborder="0"></iframe><br></p></div>
+</div><div id="id_1VSPIvh" class="WaGadgetLast WaGadgetContent  gadgetStyleNone" style="" data-componentid="1VSPIvh"><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editablearea="0" data-areaheight="auto">
+</div>
+</div></div></div></td><td style="width:20px;" data-componentid="3X696yc_separator" class="WaLayoutSeparator"><div style="width: inherit;"></div></td><td id="id_KlQ7rg5" data-componentid="KlQ7rg5" class="WaLayoutItem" style="width:50%;"><div id="id_BdzaoS6" class="WaLayoutPlaceHolder placeHolderContainer" data-componentid="BdzaoS6" style=""><div style=""><div id="id_a2ar8fV" class="WaGadgetFirst WaGadgetContent  gadgetStyleNone" style="" data-componentid="a2ar8fV"><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editablearea="0" data-areaheight="auto">
+<iframe src="OEDK%20-%20Rice%20University%20-%20ApolloBVM_files/78Gg602LPv8.html" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="300" frameborder="0"></iframe></div>
+</div><div id="id_H8pNxdp" class="WaGadgetLast WaGadgetContent  gadgetStyleNone" style="" data-componentid="H8pNxdp"><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editablearea="0" data-areaheight="auto">
+</div>
+</div></div></div></td></tr></tbody></table> </div><div id="id_Kfb176A" class="WaGadget WaGadgetContent  gadgetStyleNone" style="margin-bottom:0px;" data-componentid="Kfb176A"><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editablearea="0" data-areaheight="auto">
+<h3><a href="https://news.rice.edu/2020/03/27/ventilator-costing-less-than-300-developed-by-rice-university-and-metric-technologies-2/">Rice News</a> video featuring the Version 0 below :</h3></div>
+</div><div id="id_BDSun3f" class="WaGadget WaGadgetContent  gadgetStyleNone" style="margin-top:40px;margin-bottom:40px;" data-componentid="BDSun3f"><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editablearea="0" data-areaheight="auto">
+<iframe src="OEDK%20-%20Rice%20University%20-%20ApolloBVM_files/oLQ5bXakWq8.html" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="400" frameborder="0"></iframe></div>
+</div><div id="id_tt6bNA8" data-componentid="tt6bNA8" class="WaLayoutContainer" style=""><table class="WaLayoutTable" style="" cellspacing="0" cellpadding="0"><tbody><tr data-componentid="tt6bNA8_row" class="WaLayoutRow"><td id="id_X1GZAke" data-componentid="X1GZAke" class="WaLayoutItem" style="width:50%;"><div id="id_ePGvAF2" class="WaLayoutPlaceHolder placeHolderContainer" data-componentid="ePGvAF2" style=""><div style=""><div id="id_8qM5osG" class="WaGadgetOnly WaGadgetContent  gadgetStyleNone" style="" data-componentid="8qM5osG"><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editablearea="0" data-areaheight="auto">
+<img src="OEDK%20-%20Rice%20University%20-%20ApolloBVM_files/Apollo%2520BVM%2520-%2520Top%2520View%2520-%2520Hi%2520Res.jpg" width="521" height="417" border="0" align="right"><p><br></p><div><br></div></div>
+</div></div></div></td><td style="" data-componentid="X1GZAke_separator" class="WaLayoutSeparator"><div style="width: inherit;"></div></td><td id="id_lk9v5xx" data-componentid="lk9v5xx" class="WaLayoutItem" style="width:50%;"><div id="id_3iULjwI" class="WaLayoutPlaceHolder placeHolderContainer" data-componentid="3iULjwI" style=""><div style=""><div id="id_qW2ddXZ" class="WaGadgetOnly WaGadgetContent  gadgetStyleNone" style="" data-componentid="qW2ddXZ"><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editablearea="0" data-areaheight="auto">
+<p><img src="OEDK%20-%20Rice%20University%20-%20ApolloBVM_files/Assem2_OED0011084GX942s_conflicted_copy_2020-03-24_2020-Apr-.jpg" alt="" title="" border="0"><br></p></div>
+</div></div></div></td></tr></tbody></table> </div><div id="id_K81YILN" class="WaGadget WaGadgetContent  gadgetStyleNone" style="" data-componentid="K81YILN"><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editablearea="0" data-areaheight="auto">
+<h4><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-wacomponenttype="ContentDivider"><br>If
+ you would like to keep updated on our progress and have access to the 
+files, instructions and code,&nbsp;please register for a free user 
+account.</h4>
+
+<h3 align="center"><font face="Oswald"><a href="http://oedk.rice.edu/ABVM-registration" target="_blank" class="stylizedButton buttonStyle002">REGISTER TODAY!</a></font></h3>
+
+<p><br></p>
+
+<h4></h4>
+
+<p><br></p></div>
+</div><div id="id_ztkBywX" class="WaGadget WaGadgetContent  gadgetStyleNone" style="" data-componentid="ztkBywX"><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editablearea="0" data-areaheight="auto">
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" class="WaContentDivider WaContentDivider dividerStyle001" data-wacomponenttype="ContentDivider"><br></p></div>
+</div><div id="id_1Mzy5Wu" class="WaGadget WaGadgetContent  gadgetStyleNone" style="" data-componentid="1Mzy5Wu"><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editablearea="0" data-areaheight="auto">
+<p><strong><br>
+<br></strong></p>
+
+<h3>Advantages of ApolloBVM:</h3>
+
+<p><strong>Our solution presents many novel advantages including:</strong></p>
+
+<ol>
+  <li>End-to-end clinician-informed design inclusive of all critical engineering touch-points</li>
+
+  <li>Control systems that are designed to accommodate ARDS settings with positive pressure</li>
+
+  <li>Price target under $250 and components allow for an entirely disposable unit</li>
+
+  <li>Hot-swappable parts and power sourcing, with an easily controllable mechanical junction</li>
+
+  <li>Fully constructed from DIY components and readily available parts</li>
+</ol>
+
+<p><br></p>
+
+<p><br></p></div>
+</div><div id="id_3RBQB6E" class="WaGadgetLast WaGadgetContent  gadgetStyleNone" style="" data-componentid="3RBQB6E"><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editablearea="0" data-areaheight="auto">
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" class="WaContentDivider WaContentDivider dividerStyle001" data-wacomponenttype="ContentDivider"><br></p></div>
+</div></div>
+</div></div>
+			</div>
+		</div>
+		<div class="zoneHeader2">
+			<div class="container_12">
+				<div class="s1_grid_12 s2_grid_12 s3_grid_12">
+<div id="id_Header1" data-componentid="Header1" class="WaPlaceHolder WaPlaceHolderHeader1" style=""><div style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;"><div id="id_E3hg5eQ" data-componentid="E3hg5eQ" class="WaLayoutContainerOnly" style=""><table class="WaLayoutTable" style="" cellspacing="0" cellpadding="0"><tbody><tr data-componentid="E3hg5eQ_row" class="WaLayoutRow"><td id="id_2gjkWFK" data-componentid="2gjkWFK" class="WaLayoutItem" style="width:100%;"><div id="id_OGo1JeF" class="WaLayoutPlaceHolder placeHolderContainer" data-componentid="OGo1JeF" style=""><div style=""><div id="id_K5sCnjH" data-componentid="K5sCnjH" class="WaLayoutContainerFirst" style=""><table class="WaLayoutTable" style="" cellspacing="0" cellpadding="0"><tbody><tr data-componentid="K5sCnjH_row" class="WaLayoutRow"><td id="id_nLfZq5n" data-componentid="nLfZq5n" class="WaLayoutItem" style="width:50%;"><div id="id_dhQXTZV" class="WaLayoutPlaceHolder placeHolderContainer" data-componentid="dhQXTZV" style=""><div style=""><div id="id_hvYDq67" class="WaGadgetOnly WaGadgetContent  gadgetStyleNone" style="" data-componentid="hvYDq67"><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editablearea="0" data-areaheight="auto">
+<h3>Current version: Revision 1</h3>
+
+<p>The current prototype employs a dual rack-and-pinion mechanical 
+design converting rotational motion of motors into translational motion 
+for bag compression. The device is powered by 120V AC with a &lt; 15W 
+power draw.&nbsp;</p>
+
+<p>The device accommodates wall or tank-based oxygen through the low-pressure oxygen intake port that is a standard to the BVM.</p>
+
+<p>Current available settings for the device are the following:</p>
+
+<ul>
+  <li>Tidal Volume (TV): 300 - 650 mL (50 mL increments)</li>
+
+  <li>Respiratory Rate (RR): 5 - 30 BPM (1 BPM increments)</li>
+
+  <li>I:E Ratio: 1:2, 1:3, 1:4, 1:5</li>
+</ul>
+
+<p>The user interface consists of an LCD screen that allows the user to 
+set the operating parameters of the device and start compression in less
+ than one minute. During operation, this display also informs the user 
+of the current TV, RR, and I:E.&nbsp; The user can adjust the settings 
+during usage of the device without shutoff. An emergency shut off button
+ allows for immediate cessation of compression.</p>
+
+<p>Initial tests have shown that the ApolloBVM is capable of delivering 
+physiologically relevant volumes of compression for 24 hours of 
+operation.&nbsp;</p>
+
+<h4>Revision 2 Goals</h4>
+
+<p>In our next prototype iteration we intend to tackle the following:</p>
+
+<ul>
+  <li>Provide ability to control Flow during inspiration, but if fixed: able to deliver 60L/min</li>
+
+  <li>Pressure Support—a breath triggers either a set pressure or volume
+ of air; and maintains a continuous PEEP (Positive End Expiratory 
+Pressure)</li>
+</ul>
+
+<p><br></p><br></div>
+</div></div></div></td><td style="width:30px;" data-componentid="nLfZq5n_separator" class="WaLayoutSeparator"><div style="width: inherit;"></div></td><td id="id_ccCxQQM" data-componentid="ccCxQQM" class="WaLayoutItem" style="width:50%;"><div id="id_ZOnUQd2" class="WaLayoutPlaceHolder placeHolderContainer" data-componentid="ZOnUQd2" style=""><div style=""><div id="id_OFiYxCL" class="WaGadgetOnly WaGadgetContent  gadgetStyleNone" style="" data-componentid="OFiYxCL"><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editablearea="0" data-areaheight="auto">
+<h3><span>Total Cost of all parts &lt;$300</span></h3>The total cost of 
+the parts to make the device is expected to be under $250. This number 
+is a significant decrease from the cost of entry-level ventilators with a
+ starting price of $5000.&nbsp;For a DIY device, this price is arrived 
+at assuming that equipment related to assembly are readily available and
+ does not need to be purchased.&nbsp;
+
+<h3>Components and Assembly</h3>
+
+<p>ApolloBVM is assembled from readily available, consumer off-the-shelf
+ parts. The majority of components are intended for use as-is and easily
+ ordered through online retailers or hardware stores. Other parts 
+including casing and gears may be 3D printed or laser cut.&nbsp;Our 
+design files include a Bill of Materials for each of the components, 
+ordered, or fabricated.&nbsp;</p>
+
+<h4>Size</h4>
+
+<p>The ApolloBVM device cradles and secures the BVM with a design that 
+balances a small footprint with limited play during and between breath 
+cycles. The current version INCLUDING an adult BVM would be 
+approximately, 14” by 16” by 7”.</p>
+
+<h4>Weight</h4>
+
+<p>The goal is for the device to be placed next to the patient on a side
+ table or using a portable bedside table. The device is light-weight so 
+it can be portable. The device currently weighs less than 10lbs.</p>
+
+<h4>Time from beginning of setup to first compression cycle</h4>
+
+<p>The time from the machine being turned on to delivering the first breath is less than 1 minute.</p></div>
+</div></div></div></td></tr></tbody></table> </div><div id="id_sgJYMwC" class="WaGadgetLast WaGadgetContent  gadgetStyleNone" style="" data-componentid="sgJYMwC"><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editablearea="0" data-areaheight="auto">
+<h3 align="center">Design Specifications/Goals (Reported for Revision 1)</h3>
+
+<table watable="1" class="contStyleExcSimpleTable" style="border-collapse: collapse; border-style: solid; border-width: 1px; border-color: rgb(153, 153, 153);" width="75%" cellspacing="0" cellpadding="5" align="center"><tbody><tr><th style="border-style: solid; border-width: 1px; border-color: rgb(153, 153, 153);" valign="top" align="left"><font style="font-size: 24px;" face="Oswald">&nbsp;Specification</font></th><th style="border-style: solid; border-width: 1px; border-color: rgb(153, 153, 153);" valign="top" align="left"><font style="font-size: 24px;" face="Oswald">Value&nbsp;</font></th></tr><tr><td style="border-style: solid; border-width: 1px; border-color: #999999;" valign="top">&nbsp;Total cost of device</td><td style="border-style: solid; border-width: 1px; border-color: #999999;" valign="top">&nbsp;&lt;$250</td></tr><tr><td style="border-style: solid; border-width: 1px; border-color: #999999;" valign="top">&nbsp;Time device can run without human intervention</td><td style="border-style: solid; border-width: 1px; border-color: #999999;" valign="top">&nbsp;Tested to 24 hours</td></tr><tr><td style="border-style: solid; border-width: 1px; border-color: #999999;" valign="top">&nbsp;Time from beginning of setup to first compression cycle</td><td style="border-style: solid; border-width: 1px; border-color: #999999;" valign="top">&nbsp;Less that 1 minute</td></tr><tr><td style="border-style: solid; border-width: 1px; border-color: #999999;" valign="top">&nbsp;Size (with adult Ambu bag)</td><td style="border-style: solid; border-width: 1px; border-color: #999999;" valign="top">&nbsp;Device footprint &lt; 16"x14"x7"</td></tr><tr><td style="border-style: solid; border-width: 1px; border-color: #999999;" valign="top">&nbsp;Weight</td><td style="border-style: solid; border-width: 1px; border-color: #999999;" valign="top">&nbsp;Device (including bag) weighs &lt; 6lbs</td></tr><tr><td style="border-style: solid; border-width: 1px; border-color: #999999;" valign="top">&nbsp;Power usage</td><td style="border-style: solid; border-width: 1px; border-color: #999999;" valign="top">&nbsp;&lt;15W</td></tr></tbody></table><div align="center"><br></div></div>
+</div></div></div></td></tr></tbody></table> </div></div>
+</div></div>
+			</div>
+		</div>
+		<div class="zoneHeader3">
+			<div class="container_12">
+				<div class="s1_grid_12 s2_grid_12 s3_grid_12">
+<div id="id_Header2" data-componentid="Header2" class="WaPlaceHolder WaPlaceHolderHeader2" style=""><div style=""><div id="id_CInOBUu" class="WaGadgetFirst WaGadgetContent  gadgetStyleNone" style="" data-componentid="CInOBUu"><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editablearea="0" data-areaheight="auto">
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" class="WaContentDivider WaContentDivider dividerStyle001" data-wacomponenttype="ContentDivider"><br></p></div>
+</div><div id="id_ssMbNbd" class="WaGadgetLast WaGadgetContent  gadgetStyleNone" style="" data-componentid="ssMbNbd"><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editablearea="0" data-areaheight="auto">
+<h4>ApolloBVM Design team</h4>
+<blockquote><p><strong>Danny Blacker</strong> - Lead Designer</p><p><strong>Dr. Maria Oden</strong> - Faculty Mentor</p><p><strong>Dr. Matthew Wettergreen</strong> - Faculty Mentor</p><p><strong>Thomas Herring</strong> - Controls Lead </p><p><strong>Amy Kavalewitz </strong>- Project Manager</p><p><strong>Dr. Rohith Malya</strong> - Clinical Lead</p><p><strong>Fernando Cruz</strong> - Engineering Design Technician<br><br></p></blockquote>All design work on the ApolloBVM was done at the <a href="http://oedk.rice.edu/"><strong>Oshman Engineering Design Kitchen</strong></a> at Rice University<br>
+
+
+
+
+
+
+<p>Inspired by the 2018-2019 senior design project <a href="http://oedk.rice.edu/Sys/PublicProfile/47585242/1063096"><strong>Team Take A Breather</strong></a></p>
+<p><br></p></div>
+</div></div>
+</div></div>
+			</div>
+		</div>
+		<div class="zoneHeader4">
+			<div class="container_12">
+				<div class="s1_grid_12 s2_grid_12 s3_grid_12">
+<div id="id_Header3" data-componentid="Header3" class="WaPlaceHolder WaPlaceHolderHeader3" style=""><div style=""><div id="id_afiXz23" class="WaGadgetOnly WaGadgetContent  gadgetStyleNone" style="" data-componentid="afiXz23"><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editablearea="0" data-areaheight="auto">
+<p><a name="faqs-home"></a></p><p><script type="text/javascript" src="OEDK%20-%20Rice%20University%20-%20ApolloBVM_files/platform.js">
+</script></p>
+
+<div class="elfsight-app-a5b3b465-b9a1-4ca6-a3bc-8dfbd9e9c96e"></div><br><br></div>
+</div></div>
+</div></div>
+			</div>
+		</div>
+		<!-- /header zone -->
+
+<!-- content zone -->
+	<div class="zoneContent">
+		<div class="container_12">
+			<div class="s1_grid_12 s2_grid_12 s3_grid_12">
+<div id="idPrimaryContentBlock1Content" data-componentid="Content" class="WaPlaceHolder WaPlaceHolderContent" style=""><div style=""><div id="id_qdTMUlu" class="WaGadgetFirst WaGadgetContent  gadgetStyleNone" style="" data-componentid="qdTMUlu"><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editablearea="0" data-areaheight="auto">
+<h2>Inquiries</h2></div>
+</div><div id="id_5ywJPpt" class="WaGadgetLast WaGadgetContent  gadgetStyleNone" style="" data-componentid="5ywJPpt"><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editablearea="0" data-areaheight="auto">
+<p><img src="OEDK%20-%20Rice%20University%20-%20ApolloBVM_files/Map.jpg" alt="" title="" border="0"><br></p></div>
+</div></div>
+</div></div>
+		</div>
+	</div>
+	<!-- /content zone -->
+
+<!-- footer zone -->
+		<div class="zoneFooter1">
+			<div class="container_12">
+				<div class="s1_grid_12 s2_grid_12 s3_grid_12">
+</div>
+			</div>
+		</div>
+		<div class="zoneFooter2">
+			<div class="container_12">
+				<div class="s1_grid_12 s2_grid_12 s3_grid_12">
+<div id="id_Footer1" data-componentid="Footer1" class="WaPlaceHolder WaPlaceHolderFooter1" style="background-color:#223D61;"><div style=""><div id="id_cghHB9L" data-componentid="cghHB9L" class="WaLayoutContainerOnly" style=""><table class="WaLayoutTable" style="" cellspacing="0" cellpadding="0"><tbody><tr data-componentid="cghHB9L_row" class="WaLayoutRow"><td id="id_JqOf8WV" data-componentid="JqOf8WV" class="WaLayoutItem" style="width:33%;"><div id="id_IxUZUkr" class="WaLayoutPlaceHolder placeHolderContainer" data-componentid="IxUZUkr" style=""><div style=""><div id="id_5Q7CRdV" class="WaGadgetOnly WaGadgetContent  gadgetStyleNone" style="" data-componentid="5Q7CRdV"><div class="gadgetStyleBody gadgetContentEditableArea" style="padding-left:20px;" data-editablearea="0" data-areaheight="auto">
+<h3><font style="line-height: 1.47; font-weight: normal;" color="#FFFFFF">ABOUT</font></h3>
+
+<a href="http://oedk.rice.edu/what" title="Mission" style="line-height: 1.47;"><font style="font-size: 16px;"><font style="line-height: 1.47;" color="#FFFFFF">Mission</font><br></font></a><a href="http://oedk.rice.edu/people" title="Our Team" style="line-height: 1.47;"><font color="#FFFFFF">Our Team</font></a><br>
+<a href="http://oedk.rice.edu/where" title="Visit the OEDK"><font color="#FFFFFF">Visit the OEDK</font></a><br>
+<a href="http://oedk.rice.edu/curriculum" title="Curriculum" style="line-height: 1.47;"><font color="#FFFFFF">Curriculum</font></a><br>
+<a href="http://oedk.rice.edu/immersion" title="Immersion" style="line-height: 1.47;"><font color="#FFFFFF">Immersion</font></a><br>
+<a href="http://oedk.rice.edu/programs" title="Programs" style="line-height: 1.47;"><font color="#FFFFFF">Programs</font></a><br>
+<a href="http://oedk.rice.edu/statistics" title="OEDK Statistics" style="line-height: 1.47;"><font color="#FFFFFF">OEDK Statistics</font></a><br>
+<a href="http://oedk.rice.edu/news" title="News" style="line-height: 1.47;"><font color="#FFFFFF">News</font></a><br>
+
+
+
+<p><br></p></div>
+</div></div></div></td><td style="width:20px;" data-componentid="JqOf8WV_separator" class="WaLayoutSeparator"><div style="width: inherit;"></div></td><td id="id_BcAqUrF" data-componentid="BcAqUrF" class="WaLayoutItem" style="width:31%;"><div id="id_MiH4Tyw" class="WaLayoutPlaceHolder placeHolderContainer" data-componentid="MiH4Tyw" style=""><div style=""><div id="id_791XHHJ" class="WaGadgetOnly WaGadgetContent  gadgetStyleNone" style="" data-componentid="791XHHJ"><div class="gadgetStyleBody gadgetContentEditableArea" style="padding-left:20px;" data-editablearea="0" data-areaheight="auto">
+<h3><font style="font-weight: normal;" color="#FFFFFF">QUICK LINKS</font></h3>
+
+<div>
+  <a href="http://oedk.rice.edu/projects" style="color:white" target="_blank"><font style="font-size: 16px;" color="#FFFFFF">Current Projects</font></a>
+</div>
+
+<div>
+  <a href="http://oedk.rice.edu/winners" style="color:white" target="_blank"><font style="font-size: 16px;" color="#FFFFFF">Award Winning Projects</font></a>
+</div>
+
+<div>
+  <a href="http://oedk.rice.edu/videos" style="color:white" target="_blank"><font style="font-size: 16px;" color="#FFFFFF">Project Videos</font></a>
+</div>
+
+<div><a href="http://oedk.rice.edu/tour" target="_blank"><font style="font-size: 16px;" color="#FFFFFF">Tour Request</font></a><br></div>
+
+<div>
+  <a href="http://oedk.rice.edu/safetyguidelines" target="_blank"><font style="font-size: 16px;" color="#FFFFFF">Safety Guidelines</font></a>
+</div>
+
+<div>
+  <a href="http://oedk.rice.edu/oedk-resources" style="color:white" target="_blank"><font style="color: white; font-size: 16px;" color="#FFFFFF">Resources</font></a>
+</div>
+
+<div>
+  <a href="http://oedk.rice.edu/events" style="color:white" target="_blank">Events</a>
+</div>
+
+<div>
+  <font style="font-size: 16px;" color="#FFFFFF"><br></font>
+</div>
+</div>
+</div></div></div></td><td style="width:20px;" data-componentid="BcAqUrF_separator" class="WaLayoutSeparator"><div style="width: inherit;"></div></td><td id="id_r8IM31g" data-componentid="r8IM31g" class="WaLayoutItem" style="width:35%;"><div id="id_Qv1YY6m" class="WaLayoutPlaceHolder placeHolderContainer" data-componentid="Qv1YY6m" style=""><div style=""><div id="id_96xkdB9" class="WaGadgetOnly WaGadgetContent  gadgetStyleNone" style="" data-componentid="96xkdB9"><div class="gadgetStyleBody gadgetContentEditableArea" style="padding-left:20px;" data-editablearea="0" data-areaheight="auto">
+<h3><font style="font-weight: normal;" color="#FFFFFF">RICE PARTNERS</font></h3>
+
+<p><font style="font-size: 16px;" color="#FFFFFF"><a href="http://www.rice.edu/" style="color: white;">Rice University Homepage<br></a><a href="http://engr.rice.edu/" style="line-height: 1.47;"><font style="color:white">Brown School of Engineering<br></font></a><a href="http://rcel.rice.edu/" style="line-height: 1.47;"><font style="color: white;">Rice Center for Engineering Leadership</font></a><br>
+<a href="http://www.rice360.rice.edu/" style="color: white;" target="_blank"><font color="#FFFFFF">Rice 360˚ Institute for Global Health</font></a></font></p>
+
+<p><br></p></div>
+</div></div></div></td></tr></tbody></table> </div></div>
+</div></div>
+			</div>
+		</div>
+		<div class="zoneFooter3">
+			<div class="container_12">
+				<div class="s1_grid_12 s2_grid_12 s3_grid_12">
+<div id="id_Footer2" data-componentid="Footer2" class="WaPlaceHolder WaPlaceHolderFooter2" style=""><div style=""><div id="id_MDf2VHu" data-componentid="MDf2VHu" class="WaLayoutContainerFirst" style=""><table class="WaLayoutTable" style="" cellspacing="0" cellpadding="0"><tbody><tr data-componentid="MDf2VHu_row" class="WaLayoutRow"><td id="id_yx52LWr" data-componentid="yx52LWr" class="WaLayoutItem" style="width:61%;"></td><td style="" data-componentid="yx52LWr_separator" class="WaLayoutSeparator"><div style="width: inherit;"></div></td><td id="id_NO7grEC" data-componentid="NO7grEC" class="WaLayoutItem" style="width:39%;"></td></tr></tbody></table> </div><div id="id_m6c3xOV" data-componentid="m6c3xOV" class="WaLayoutContainerLast" style=""><table class="WaLayoutTable" style="" cellspacing="0" cellpadding="0"><tbody><tr data-componentid="m6c3xOV_row" class="WaLayoutRow"><td id="id_FfWGqBr" data-componentid="FfWGqBr" class="WaLayoutItem" style="width:48%;"><div id="id_nEbWoSG" class="WaLayoutPlaceHolder placeHolderContainer" data-componentid="nEbWoSG" style=""><div style=""><div id="id_4T9oLyY" class="WaGadgetFirst WaGadgetContent  gadgetStyleNone" style="" data-componentid="4T9oLyY"><div class="gadgetStyleBody gadgetContentEditableArea" style="padding-left:20px;" data-editablearea="0" data-areaheight="auto">
+<h3><font style="font-weight: normal;" color="#FFFFFF">Contact us</font></h3>
+
+<p><font style="font-size: 16px;" color="#FFFFFF">Oshman Engineering Design Kitchen<br>Rice University</font></p>
+
+<p><font style="font-size: 16px;" color="#FFFFFF">6100 Main Street MS 390 | Houston, Texas | 77005<br></font></p>
+
+<p><font style="font-size: 16px;" color="#FFFFFF">Phone: 713.348.OEDK</font></p>
+
+<p><font style="font-size: 16px;" color="#FFFFFF">Email:&nbsp;<u><a href="mailto:oedk@rice.edu">oedk@rice.edu</a></u></font></p></div>
+</div><div id="id_SSV6aA4" class="WaGadgetLast WaGadgetSocialProfile  gadgetThemeStyle" style="margin-top:0px;margin-left:20px;" data-componentid="SSV6aA4"><div class="gadgetStyleBody " style="" data-areaheight="auto">
+<ul class="orientationHorizontal  alignLeft">
+
+
+<li>
+				<a href="https://www.facebook.com/OEDKatRice" title="Facebook" class="Facebook" target="_blank"></a>
+			</li>
+<li>
+				<a href="https://twitter.com/Rice_OEDK" title="Twitter" class="Twitter" target="_blank"></a>
+			</li>
+<li>
+				<a href="https://www.youtube.com/user/OEDKRice" title="YouTube" class="YouTube" target="_blank"></a>
+			</li>
+		
+</ul>
+
+</div>
+</div></div></div></td><td style="width:40px;" data-componentid="FfWGqBr_separator" class="WaLayoutSeparator"><div style="width: inherit;"></div></td><td id="id_NoH8oUu" data-componentid="NoH8oUu" class="WaLayoutItem" style="width:13%;"></td><td style="width:40px;" data-componentid="NoH8oUu_separator" class="WaLayoutSeparator"><div style="width: inherit;"></div></td><td id="id_Xr19lod" data-componentid="Xr19lod" class="WaLayoutItem" style="width:38%;"><div id="id_v79DLvO" class="WaLayoutPlaceHolder placeHolderContainer" data-componentid="v79DLvO" style=""><div style=""><div id="id_rPHSpRx" class="WaGadgetFirst WaGadgetContent  gadgetStyleNone" style="" data-componentid="rPHSpRx"><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editablearea="0" data-areaheight="auto">
+<h3 align="center"><font color="#FFFFFF">Industry Partners</font></h3></div>
+</div><div id="id_wZLkmKv" class="WaGadget WaGadgetContent  gadgetStyleNone" style="" data-componentid="wZLkmKv"><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editablearea="0" data-areaheight="auto">
+<p align="center"><img src="OEDK%20-%20Rice%20University%20-%20ApolloBVM_files/chevron.gif" style="margin-left: auto; margin-right: auto; display: block;" width="125" border="0"><br></p></div>
+</div><div id="id_FnRQKeG" class="WaGadgetLast WaGadgetContent  gadgetStyleNone" style="" data-componentid="FnRQKeG"><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editablearea="0" data-areaheight="auto">
+<p align="center"><img src="OEDK%20-%20Rice%20University%20-%20ApolloBVM_files/shell.gif" alt="" title="" style="margin-left: auto; margin-right: auto; display: block;" width="120" height="111" border="0"></p></div>
+</div></div></div></td></tr></tbody></table> </div></div>
+</div></div>
+
+<div class="s1_grid_12 s2_grid_12 s3_grid_12">
+<div id="idFooterPoweredByContainer">
+	<span id="idFooterPoweredByWA">
+</span>
+</div>
+</div>
+</div>
+		</div>
+		<!-- /footer zone -->
+
+<div id="idCustomJsContainer" class="cnCustomJsContainer">
+<script type="text/javascript">
+try
+{
+    
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-33797209-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+
+}
+catch(err)
+{}</script>
+
+<script type="text/javascript">
+try
+{
+    
+    var myPage = document.getElementById('membershipDetailsContainer');
+    if (myPage) {
+        myPage.innerHTML = myPage.innerHTML.replace('Member profile details', ' ');
+
+    }
+
+}
+catch(err)
+{}</script>
+
+<script>
+try
+{
+    
+    try {
+
+        document.getElementById('idBlogBackContainer').innerHTML = document.getElementById('idBlogBackContainer').innerHTML + '| <a name="fb_share" type="button_count" href="http://www.facebook.com/sharer.php">Share this post</a>';
+
+        WebSiteName = document.title.substring(0, document.title.lastIndexOf("-"));
+        BlogPostTitle = document.getElementsByClassName('boxHeaderTitle')[0].innerHTML.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+        NewTitle = WebSiteName + " | " + BlogPostTitle
+        document.title = NewTitle;
+
+    } catch (err) {}
+
+}
+catch(err)
+{}</script>
+
+
+
+<script type="text/javascript">
+try
+{
+    
+    var myPage = document.body.querySelector('[class~="memberDirectoryDetailsHeaderContainer"]');
+
+    if (myPage) {
+        myPage.innerHTML = myPage.innerHTML.replace(/\s*Member\s+details\s*/, '');
+    }
+
+}
+catch(err)
+{}</script>
+
+
+</div>
+</div>
+
+<script type="text/javascript">if (window.BonaPage && BonaPage.setPageState) { BonaPage.setPageState(BonaPage.PAGE_PARSED); }</script></body></html>
